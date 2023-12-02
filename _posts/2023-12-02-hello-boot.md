@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "Hello Boot! Writing a string on the screen after booting off the B.I.O.S. (1/2)"
-date: '2023-11-18'
+date: '2023-12-02'
 author: Andrei Tihoan
 tags:
 - Software Engineering
-modified_time: '2023-11-18'
+modified_time: '2023-12-02'
 thumbnail_path: "projects/bios.jpg"
 excerpt: |
   How does an operating system begin execution? That sounds like an awfully complicated question, 
