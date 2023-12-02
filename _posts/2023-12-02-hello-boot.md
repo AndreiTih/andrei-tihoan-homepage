@@ -255,16 +255,19 @@ mov bx , HELLO_WORLD_STRING
 mov ah , 0x0e ; int 10/ ah = 0eh -> scrolling teletype BIOS routine
 
 print_string_loop:
-mov cl, [bx] ; Moving the value of the character pointed to by bx into cl.
-cmp cl, 0 ; Checking if we reached the end of C style string
+; Checking if we reached the end of the C-style string
+mov cl, [bx] 
+cmp cl, 0 
 je print_string_end
-;Print the first character at the bx address
+
+;Print the character currently pointed to by bx
 mov al, [bx]
 int 0x10 ; print (al)
-inc bx ;Increment address
-jmp print_string_loop
-print_string_end:
 
+inc bx ;Increment bx to point to the next character in the string
+jmp print_string_loop
+
+print_string_end:
 jmp $
 
 HELLO_WORLD_STRING db "Hello Boot!" , 0
