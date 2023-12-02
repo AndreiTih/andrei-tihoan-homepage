@@ -140,7 +140,7 @@ to this:
 ata0-master: type=disk, mode=flat, path="os-image.iso"
 {% endhighlight %}
 
-This option defines the type and characteristics of an attached ata device. Advanced Technology Attachment (ATA) is a standard physical interface for connecting storage devices within a computer. You might be familliar with [SATA](https://en.wikipedia.org/wiki/SATA) which stands for Serial ATA. I at least think of the SATA cables that one uses to connect modern hard disks or SSD's to one's motherboard.
+This option defines the type and characteristics of an attached ata device. "Advanced Technology Attachment (ATA) is a standard physical interface for connecting storage devices within a computer"[[4](#references)]. You might be familliar with [SATA](https://en.wikipedia.org/wiki/SATA) which stands for Serial ATA. I at least think of the SATA cables that one uses to connect modern hard disks or SSD's to one's motherboard.
 
 Regardless, using this option we're basically defining our virtual hard disk. The important part is the path property which leads to the file that contains the contents of the virtual hard disk device.
 
@@ -477,3 +477,5 @@ By this point it's clear that as low-level as it is, assembly does a lot of work
 [[2](https://en.wikipedia.org/wiki/Disk_sector)] https://en.wikipedia.org/wiki/Disk_sector
 
 [[3](https://en.wikipedia.org/wiki/Endianness)] https://en.wikipedia.org/wiki/Endianness
+
+[[4]](https://www.techopedia.com/definition/2142/advanced-technology-attachment-ata) https://www.techopedia.com/definition/2142/advanced-technology-attachment-ata
