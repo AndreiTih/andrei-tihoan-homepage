@@ -187,7 +187,7 @@ We're so close to our goal. All we need is a way to write to the screen. Fortuna
 
 ### Intrerrupts
 
-The B.I.O.S interface makes its routines available via intrerrupts. Intrerrupts are a processor feature that allows you to temporarily halt the CPU from what it's doing and have it jump execution to what is called an **ISR** (Intrerrupt Service Routine), before resuming to the code it was previously executing. The ISR is code just like ours that the CPU can execute.
+The B.I.O.S interface makes its routines available via intrerrupts. Intrerrupts are a processor feature that allows you to temporarily halt the CPU from what it's doing and have it jump execution to what is called an **ISR** (Intrerrupt Service Routine), before resuming execution of the code it was at prior to the intrerrupt. The ISR is code just like ours that the CPU can execute.
 
 Intrerrupts are a vital feature of processors, as they can be triggered both by software like we are now, and by hardware. This is the feature that allows computers to react to keys being pressed on a keyboard for example.
 
@@ -259,7 +259,7 @@ mov cl, [bx] ; Moving the value of one byte into the cl register
 cmp cl, 0 ; Checking if we reached the end of C style string
 je print_string_end
 ;Print the first character at the bx address
-mov al, [bx] ; then copy bl ( i.e. 8- bit char ) to al
+mov al, [bx]
 int 0x10 ; print (al)
 inc bx ;Increment address
 jmp print_string_loop
