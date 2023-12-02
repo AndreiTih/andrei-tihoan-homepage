@@ -255,7 +255,7 @@ mov bx , HELLO_WORLD_STRING
 mov ah , 0x0e ; int 10/ ah = 0eh -> scrolling teletype BIOS routine
 
 print_string_loop:
-mov cl, [bx] ; Moving the value of one byte into the cl register
+mov cl, [bx] ; Moving the value of the character pointed to by bx into cl.
 cmp cl, 0 ; Checking if we reached the end of C style string
 je print_string_end
 ;Print the first character at the bx address
