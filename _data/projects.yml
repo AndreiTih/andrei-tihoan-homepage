@@ -12,4 +12,4 @@
     playbuffer framework, which does not use any 3D acceleration. Most of the methods write to an an array buffer containing
     pixels. This array buffer then gets displayed to the window 60 times a second using a winAPI function called StretchDIBits.
   url: "https://github.com/AndreiTih/AgentJump"
-  image: "AgentJumpVertical.png"
+  image: "AgentJumpSmall.gif"

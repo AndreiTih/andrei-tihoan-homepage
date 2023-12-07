@@ -123,6 +123,7 @@ For the purposes of this article, we will go ahead with option nr 3.
 
 To emulate the CPU, I've been using Bochs on a Windows 10 machine. Bochs, as mentioned on [their website](https://bochs.sourceforge.io/) is a "highly portable open source IA-32 (x86) PC emulator written in C++, that runs on most popular platforms. It includes emulation of the Intel x86 CPU, common I/O devices, and a custom BIOS".
 
+### The bochsrc configuration file
 To set up Bochs, all one needs is a configuration file called bochsrc. Inside the installation folder for bochs, there is a file called bochsrc-sample.txt containing sensible default options for our emulator that I have copy pasted into the "/Part1" folder and renamed as bochsrc. In this case "/" references the root folder of [the github repo](https://github.com/AndreiTih/Hello_Boot) containing the code used in this article. The reason for this is that bochs first searches the current [working directory](https://en.wikipedia.org/wiki/Working_directory#:~:text=In%20computing%2C%20the%20working%20directory,function%2C%20or%20just%20current%20directory.) for this configuration file, and in this case I execute bochs while my working directory is "/Part1".
 
 
@@ -354,9 +355,10 @@ C/C++ and systems languages in general have a range of features that can only be
 This is the first article in a series of 2. While the original inquiry is answered, still many questions remain: 
 1. What if we want to have code larger than 512 bytes?
 2. How do we compile and use a higher-level language like C++ in this pre-os environment?
-3. Is A.I. going to take over all software engineering jobs in the next 10 years?
+3. How did the BIOS create the function to write the characters on screen? How do you write code that interacts with devices?
+4. Is A.I. going to take over all software engineering jobs in the next 10 years?
 
-These first 2 questions and more will be answered in second part of this article series...
+These first 3 questions and more will be answered in second part of this article series...
 
 # Appendix
 
