@@ -188,7 +188,7 @@ We're so close to our goal. All we need is a way to write to the screen. Fortuna
 
 ### Intrerrupts
 
-The B.I.O.S interface makes its routines available via intrerrupts. Intrerrupts are a processor feature that allows you to temporarily halt the CPU from what it's doing and have it jump execution to what is called an **ISR** (Intrerrupt Service Routine), before resuming execution of the code it was at prior to the intrerrupt. The ISR is code just like ours that the CPU can execute.
+The B.I.O.S interface makes its routines available via intrerrupts. Intrerrupts are a processor feature that allows you to temporarily halt the CPU from what it's doing and have it jump execution to what is called an **ISR** (Intrerrupt Service Routine), before resuming execution of the code it was at prior to the intrerrupt. 
 
 Intrerrupts are a vital feature of processors, as they can be triggered both by software like we are now, and by hardware. This is the feature that allows computers to react to keys being pressed on a keyboard for example.
 
@@ -203,9 +203,9 @@ So, in a nutshell, BIOS adds some of its own ISRs to the interrupt vector that s
 
 ### Writing a character on the screen
 
-BIOS makes use of the ah register to determine which routine we want to invoke. For the routine related to printing characters on the screen it requires ah to contain the value 0xeh.
+BIOS makes use of the **ah** register to determine which routine we want to invoke. For the routine related to printing characters on the screen it requires **ah** to contain the value **0xeh**.
 
-The screen-related ISR requires the character to be printed to be inside register al. The ISR we need is invoked by index 10 in the intrerrupt vector, and we'll use the int instruction to invoke a software intrerrupt which will execute the ISR that's currently attached to index 10.
+The screen-related ISR requires the character to be printed to be inside register **al**. The ISR we need is invoked by index 10 in the intrerrupt vector, and we'll use the **int** instruction to invoke a software intrerrupt which will execute the ISR that's currently attached to index 10.
 
 {% highlight assembly%}
 mov ah , 0x0e
@@ -355,7 +355,7 @@ C/C++ and systems languages in general have a range of features that can only be
 This is the first article in a series of 2. While the original inquiry is answered, still many questions remain: 
 1. What if we want to have code larger than 512 bytes?
 2. How do we compile and use a higher-level language like C++ in this pre-os environment?
-3. How did the BIOS create the function to write the characters on screen? How do you write code that interacts with devices?
+3. How did the BIOS create the function to write the characters on screen? More generally, how do you write code that interacts with devices(a.k.a drivers)?
 4. Is A.I. going to take over all software engineering jobs in the next 10 years?
 
 These first 3 questions and more will be answered in second part of this article series...
