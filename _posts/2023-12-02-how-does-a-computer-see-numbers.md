@@ -61,7 +61,7 @@ In the above animation, the 6502 is doing a memory read from address 21828. At t
 module contains the value 7 at this address. These are completely arbitrary values chosen for this example.
 
 I am referring to the address by stating a number, but what's happening at the hardware level is that the CPU
-is sending an electric signal to the memory module. The decimal number 21828 is equivalent to 0101 0101 0100 0100 in binary. And decimal 7 is 0111.
+is sending an electric signal to the memory module. The decimal number 21828 is equivalent to 0101 0101 0100 0100 in binary. And decimal 7 is 0000 0111.
 
 It's a bit hard to see in the above animation, but each individual wire from the bus is labeled according to the bit it represents in the 'number'.
 If you look closely you'd notice the A0, A1, A2, ... A14, A15 labels for the wires on the address BUS, and the D0, D1, ... D7 labels for the wires on
