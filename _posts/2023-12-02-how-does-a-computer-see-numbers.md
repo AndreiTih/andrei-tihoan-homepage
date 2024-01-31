@@ -64,7 +64,7 @@ I am referring to the address by stating a number, but what's happening at the h
 is sending an electric signal to the memory module. The decimal number 21828 is equivalent to 0101 0101 0100 0100 in binary. And decimal 7 is 0000 0111.
 
 It's a bit hard to see in the above animation, but each individual wire from the bus is labeled according to the bit it represents in the 'number'.
-If you look closely you'd notice the A0, A1, A2, ... A14, A15 labels for the wires on the address BUS, and the D0, D1, ... D7 labels for the wires on
+If you look closely you will notice the A0, A1, A2, ... A14, A15 labels for the wires on the address BUS, and the D0, D1, ... D7 labels for the wires on
 the data BUS.
 
 The electric signal that is sent on the 16-wire BUS has the wires representing bit number 2,
