@@ -59,7 +59,7 @@ It's important to note that at the time of writing this article the [BIOS Boot S
 How do you get your code to run?
 
 This next part involves writing a tiny bit of assembly code. If you're not familiar with x86 assembly language or the concept of CPU instructions,
-there's a brief explanation of assembly in the [appendix](#appendix) of this article. For the curious, also see "[How does a computer store numbers?](andreitihoan.com/writing/2024/01/22/assembly-intro/)".
+there's a brief explanation of assembly in the [appendix](#appendix) of this article. For the curious, also see "[How does a computer 'see' numbers?](https://www.andreitihoan.com/writing/2024/01/22/how-does-a-computer-see-numbers/)".
 
 The code for this exercise only contains 5 distinct x86 assembly instructions, 2 of which are only used once. Only a tiny bit of assembly code is required and soon enough it'll be possible to use a higher-level language such as C, C++, Rust, Zig, or any language that compiles to native code.
 
@@ -96,7 +96,7 @@ dw 0xaa55                ; magic number to the end of the 512
 
 Which is a classic endless loop.
 
-In the assembly source file, the [TIMES prefix](https://nasm.us/doc/nasmdoc3.html#section-3.2.5) along with the db [pseudo-instruction](https://nasm.us/doc/nasmdoc3.html#section-3.2) and the $ and $$ tokens were used to pad out the binary with just enough 0's and to add the magic number AA55h such that our code compiles to exactly the 512-byte size of the boot sector. Refer to the [pseudo-instruction](#the-db-pseudo-instruction) and the [assembly language](#2-assembly-language) sections for further info on these.
+In the assembly source file, the [TIMES prefix](https://nasm.us/doc/nasmdoc3.html#section-3.2.5) along with the db [pseudo-instruction](https://nasm.us/doc/nasmdoc3.html#section-3.2) and the $ and $$ tokens were used to pad out the binary with just enough 0's and to add the magic number AA55h such that our code compiles to exactly the 512-byte size of the boot sector. Refer to the [pseudo-instruction](#the-db-pseudo-instruction) and the [assembly language](#assembly-language) sections for further info on these.
 
 Using a program to view the contents of a file in binary form we can see the data inside the boot sector:
 
