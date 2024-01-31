@@ -9,7 +9,7 @@ modified_time: '2023-12-02'
 thumbnail_path: "projects/bios.jpg"
 excerpt: |
   How does an operating system begin execution? That sounds like an awfully complicated question, 
-  reserved for tech-wizards of the highest order. But in actuality it's a fairly simple exercise
+  reserved for tech-wizards of the highest order. But in reality it's a fairly simple exercise
   a junior dev could complete in a weekend if curious and motivated enough to do so. It's only made 
   complex by lack of documentation or 'tutorials' around the topic...
 ---
