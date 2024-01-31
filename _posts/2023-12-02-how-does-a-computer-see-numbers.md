@@ -19,7 +19,7 @@ excerpt: |
 I still remember when I started programming the confusion I felt trying to make a real-world connection to how computers worked.
 Computers just do math everyone says. How is that possible? How can a physical thing be aware of and manipulate numbers?
 
-A computer doesn't 'see numbers' since numbers are an abstract mathematical concept. The computer interprets electronic signals on a bus.
+A computer doesn't 'see numbers' since numbers are an abstract mathematical concept. The computer interprets electric signals on a bus.
 It so happens that, as humans, we can make a one-to-one abstract association between a number and a signal on a bus.
 This is because every number can be converted to base 2, which can then be associated with a signal. Let me explain:
 
@@ -31,7 +31,7 @@ Every number has a property that is called a base. The base of a number represen
 symbols to represent a number: 0, 1, 2, 3 ..., 9. And as such we say that our numbers are represented in base 10, also known as a decimal base.
 
 We can, however, use more or less symbols to represent the same number value. For example, if we use base 16, we have 6 extra symbols that allow us to
-go all the way to 15 with a single symbol. The lazy way to find more symbols is to just the letters of the alphabet.
+go all the way to 15 with a single symbol. The lazy way to find more symbols is to use the letters of the alphabet.
 So counting to 15 would look like this: 0, 1, ..., 9, A, B, C, D, E, F. 
 
 We could also use a smaller base to represent the same number value. Binary, or base 2 only uses the symbols 0 and 1. So counting to 15 in binary would
