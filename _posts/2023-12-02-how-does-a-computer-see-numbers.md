@@ -20,7 +20,7 @@ I still remember when I started programming the confusion I felt trying to make 
 Computers just do math everyone says. How is that possible? How can a physical thing be aware of and manipulate numbers?
 
 A computer doesn't 'see numbers' since numbers are an abstract mathematical concept. The computer interprets electric signals on a bus.
-It so happens that, as humans, we can make a one-to-one abstract association between a number and a signal on a bus.
+It so happens that, as humans, we can make a one-to-one association between a number and a signal on a bus.
 This is because every number can be converted to base 2, which can then be associated with a signal. Let me explain:
 
 [//]: # (TODO: Write a simple explanation of what the article will be about.)
