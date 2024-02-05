@@ -20,6 +20,10 @@ I still remember when I started programming the confusion I felt trying to make 
 Computers just do math everyone says. How is that possible? How can a physical thing be aware of and manipulate numbers?
 
 A computer doesn't 'see numbers' since numbers are an abstract mathematical concept. The computer interprets electric signals on a bus.
+A bus in practice is a bundle of wires that transmits electric signals, but the more academic, abstract definition is: "A bus (historically also 
+called data highway or databus) is a communication system that transfers data between components inside a computer, or between computers"
+[[1](#references)].
+
 It so happens that, as humans, we can make a one-to-one association between a number and a signal on a bus.
 This is because every number can be converted to base 2, which can then be associated with a signal. Let me explain:
 
@@ -34,17 +38,19 @@ We can, however, use more or less symbols to represent the same number value. Fo
 go all the way to 15 with a single symbol. The lazy way to find more symbols is to use the letters of the alphabet.
 So counting to 15 would look like this: 0, 1, ..., 9, A, B, C, D, E, F. 
 
-We could also use a smaller base to represent the same number value. Binary, or base 2 only uses the symbols 0 and 1. So counting to 15 in binary would
-look like this:
+Crucially, we could also use a smaller base to represent the same number value. Binary, or base 2 only uses the symbols 0 and 1.
+This is crucial to understand and its relevance will be shown a bit further in this article. I'm sure you must've heard the phrase before: "Computers only see zeros and ones".
 
-0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111 
+[//]: # (0, 1, 10, 11, 100, 101, 110, 111, 1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111)
+
+{% include figure.html path="blog/how-does-a-computer-see-numbers/Counting_to_20.gif" caption="Counting to 20 in Decimal, Hexadecimal and Binary" %}
 
 
 Why would we do this though?
 
-What is the utility of having multiple bases to represent numbers?
+What is the utility of having multiple bases to represent the same number value?
 
-In the case of binary values, the reason is because we can associate an electric signal on a bus with a number. What does that mean?
+In the case of the binary representation, the reason is because we can associate an electric signal on a bus with a number. What does that mean?
 This is easiest to understand with an example:
 
 For a more detailed explanation of how number bases work, see this page from [LibreTexts](https://math.libretexts.org/Courses/Mount_Royal_University/MATH_2150%3A_Higher_Arithmetic/7%3A_Numeration_Systems/7.2%3A_Number_Bases#:~:text=A%20number%20base%20is%20the,commonly%20known%20as%20base%2010.).
@@ -80,10 +86,12 @@ for it, the two can be thought of as being equivalent.
 
 ### Summary
 
-So in practice, a processor is just an electronic circuit that interprets electric signals. These electric signals can be associated with 
-binary numbers. And a binary number is still just a number like any other. It can be converted to a more familiar decimal base. 
+So in practice, a processor is just an electronic circuit that interprets electric signals. These signals can be associated with 
+binary numbers. And a binary number is still just a number like any other. It can be converted to a more familiar decimal base. The computer cannot
+see 'numbers', but in spoken and written language people refer to the electric signals by using numbers.
 
-In this example, we're doing a memory read, but the processor can do many other operations including mathematical ones such as addition and subtraction.
+In this example, we're doing a memory read, but the processor can do many other operations on these signals including mathematical ones such as
+addition and subtraction. 
 
 Note that the above gif is not 100% accurate to how a 6502 would be connected to a memory module.
 I left a few things out and took the liberty to rearrange the 6502's pins to make animating the gif easier.
@@ -158,6 +166,7 @@ Since computers can only really store numbers we rely on encoding methods that h
 Thus that code just does a relative jump -2 bytes from the address of the next instruction. Since our code is 2 bytes long, that jump will lead the program counter right back to our JMP instruction, resulting in an endless loop.
 
 
+## References
 
-
+[[1](https://en.wikipedia.org/wiki/IBM)] https://en.wikipedia.org/wiki/Bus_(computing)
 
