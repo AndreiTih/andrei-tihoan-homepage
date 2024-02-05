@@ -48,7 +48,7 @@ This is crucial to understand and its relevance will be shown a bit further in t
 
 Why would we do this though?
 
-What is the utility of having multiple bases to represent the same number value?
+What is the utility of being able to represent the same number value with multiple bases?
 
 In the case of the binary representation, the reason is because we can associate an electric signal on a bus with a number. What does that mean?
 This is easiest to understand with an example:
