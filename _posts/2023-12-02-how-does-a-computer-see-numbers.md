@@ -86,8 +86,8 @@ for it, the two can be thought of as being equivalent.
 
 ### Summary
 
-So in practice, a processor is just an electronic circuit that interprets electric signals. These signals can be associated with 
-binary numbers. And a binary number is still just a number like any other. It can be converted to a more familiar decimal base. The computer cannot
+So in practice, a processor is an electronic circuit that interprets electric signals. These signals can be associated with 
+binary numbers. And a binary number is still a number like any other. It can be converted to a more familiar decimal base. The computer cannot
 see 'numbers', but in spoken and written language people refer to the electric signals by using numbers.
 
 In this example, we're doing a memory read, but the processor can do many other operations on these signals including mathematical ones such as
@@ -110,14 +110,14 @@ by Steve Mould. Featuring an addition gate that uses water instead of electricit
 The previous example shows a memory read, but what is memory?
 
 Memory can be thought of as an electric circuit whose main purpose is to store data. Each data element in memory has a corresponding
-**address** and **value**. Both the address and value are just 'numbers' or as we just discussed, signals. The size of the address is
+**address** and **value**. Both the address and value are just 'numbers' or as we discussed, signals. The size of the address is
 represented by the architecture of the CPU. On an 8-bit architecture the address is an 8-bit number, on a 16-bit architecture it's a 16-bit number, and as you might guess in current times
 on a 64-bit architecture, the address is a 64-bit number. The value however is always an 8-bit value. 
 Or at least [it has been on every modern computer architecture since 1978](https://en.wikipedia.org/wiki/Word_(computer_architecture)#Table_of_word_sizes).
 
 ## CPU Instructions
 
-CPU instructions are just 'numbers' or 'signals' stored in memory. The CPU has a special register called a '[program counter](https://en.wikipedia.org/wiki/Program_counter)',
+CPU instructions are simply 'numbers' or 'signals' stored in memory. The CPU has a special register called a '[program counter](https://en.wikipedia.org/wiki/Program_counter)',
 sometimes known as the 'instruction pointer' holding the address of the next instruction to be executed.
 
 A register is a container inside a CPU that stores some data. Unlike memory, the register is physically inside the CPU
@@ -134,7 +134,7 @@ To understand the nature of instructions, we're interested in the compiled versi
 
 {% include figure.html path="blog/hello-boot/endless-loop.jpg" caption="The while(true) of x86-assembly shown in binary form. The HxD hex editor was used to view the binary file" %}
 
-It can seen in the image that the program compiles to just 2 numbers written in base 16 (hexadecimal) EB and FE. The 2 other numbers 55 
+It can seen in the image that the program compiles to 2 numbers written in base 16 (hexadecimal) EB and FE. The 2 other numbers 55 
 and AA can be ignored as they represent something else entirely. Their meaning is explained in the original [article](http://andreitihoan.com/writing/2023/12/02/hello-boot).
 
 EB represents the JMP instruction and FE its operand in the x86 instruction set architecture.
@@ -163,7 +163,7 @@ As for a more practical example, there's the [ASCII](https://en.wikipedia.org/wi
 Since computers can only really store numbers we rely on encoding methods that humans define and agree on to represent any kind of data numerically. In this case, we want to encode negative numbers, and while there exist many methods to do so, one of the most common is the [two's complement](https://en.wikipedia.org/wiki/Two%27s_complement) method which happens to be used by the Intel® 64 and IA-32 Architectures.
 
 
-Thus that code just does a relative jump -2 bytes from the address of the next instruction. Since our code is 2 bytes long, that jump will lead the program counter right back to our JMP instruction, resulting in an endless loop.
+Thus that code does a relative jump -2 bytes from the address of the next instruction. Since our code is 2 bytes long, that jump will lead the program counter right back to our JMP instruction, resulting in an endless loop.
 
 
 ## References
