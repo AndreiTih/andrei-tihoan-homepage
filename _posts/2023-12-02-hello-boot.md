@@ -70,7 +70,7 @@ The firmware that implements the BIOS interface looks to the first **sector** of
 A sector is the minimum storage unit of a storage device. "Each sector stores a fixed amount of user-accessible data, traditionally 512 bytes for hard disk drives (HDDs) and 2048 bytes for CD-ROMs and DVD-ROMs"[[2](#references)]
 
 
-Later on, we'll be using a [CPU emulator](#using-a-cpu-emulator) to run this code and place it on an emulated hard disk. As such we'll be placing the magic number at the 511th and 512th byte of the first sector of our virtual disk.
+Later on, we'll be using a [PC emulator](#using-a-cpu-emulator) to run this code and place it on an emulated hard disk. As such we'll be placing the magic number at the 511th and 512th byte of the first sector of our virtual disk.
 
 The BIOS then gives the option to boot from this storage device. If selected, all of the data from the boot sector gets copied over to address 0x7c00h, then the bios uses a jmp instruction to pass execution to that same address.
 
@@ -122,7 +122,8 @@ At this point to boot off this code there are at least 3 options:
 
 For the purposes of this article, we will go ahead with option nr 3.
 
-### Using a CPU emulator
+### Using a PC emulator
+
 {% include figure.html path="blog/hello-boot/bochs-pretending.jpg" caption="In contrast to its devious smile, Bochs is very user friendly." %}
 
 To emulate the PC, I've been using Bochs on a Windows 10 machine. Bochs, as mentioned on [their website](https://bochs.sourceforge.io/) is a "highly portable open source IA-32 (x86) PC emulator written in C++, that runs on most popular platforms. It includes emulation of the Intel x86 CPU, common I/O devices, and a custom BIOS".
