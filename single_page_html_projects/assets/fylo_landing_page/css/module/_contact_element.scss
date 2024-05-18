@@ -1,0 +1,19 @@
+
+.contact-element
+{
+    display:flex;
+    gap:15px;
+    margin-bottom:1rem;
+    align-items:center;
+
+    img
+    {
+        width:20px;
+        height:20px;
+    }
+
+    p
+    {
+        color:white;
+    }
+}

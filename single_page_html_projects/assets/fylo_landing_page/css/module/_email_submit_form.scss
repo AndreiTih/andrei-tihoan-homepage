@@ -1,0 +1,57 @@
+.email-submit-form
+{
+    display:flex;
+    width:fit-content;
+    gap:15px;
+
+    input[type=text]
+    {
+        box-sizing:border-box;
+        position:relative;
+        min-width:300px;
+        height:45px;
+        border: 1px solid black;
+        border-radius:5px;
+    }
+
+    input[type=text]::placeholder
+    {
+        position:absolute;
+        left:1.5rem;
+        color:$light-gray;
+
+    }
+    input[type=submit]
+    {
+        box-sizing:border-box;
+        width:200px;
+        height:45px;
+        background-color:$bright-blue;
+        color:white;
+        @include raleway(400);
+        border-radius:5px;
+        font-size:0.90rem;
+    }
+}
+
+//Breakpoints
+
+@media (max-width: $breakpoint-sm)
+{
+    .email-submit-form
+    {
+        flex-direction:column;
+        input[type=submit]
+        {
+            width:100%;
+            height:40px;
+        }
+        input[type=submit]
+        {
+            width:100%;
+            height:40px;
+        }
+
+    }
+
+}

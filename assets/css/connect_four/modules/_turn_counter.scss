@@ -1,0 +1,41 @@
+.turn-counter
+{
+    position:absolute;
+    width:197px;
+    height:165px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    
+    bottom:0px;
+    left: 50%;
+    transform: translate(-50%, 0%); // To offset the element by half of its width, effectively centering it. Otherwise it's left side will be at the 50% mark
+    z-index:$z-layer-closest;
+
+
+    .player-turn-label
+    {
+        position:absolute;
+        top:41px;
+    }
+    .timer-value
+    {
+        position:absolute;
+        bottom:32px;
+    }
+}
+
+.turn-counter-player1
+{
+    background: url("assets/connect_four/images/turn-background-red.svg");
+}
+.turn-counter-player2
+{
+    background: url("assets/connect_four/images/turn-background-yellow.svg");
+}
+
+
+
+

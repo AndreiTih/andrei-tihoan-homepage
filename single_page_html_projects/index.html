@@ -1,0 +1,27 @@
+---
+layout: html_single_page
+title: "Andrei Tihoan: Home Page"
+header_title: HTML and CSS fundamentals
+include_header: html_css_header.html
+nav_item: home
+---
+
+<head>
+    {% for project in site.data.html_css_projects %}
+        {{project.html_head}}
+    {% endfor %}
+</head>
+
+
+{% for project in site.data.html_css_projects %}
+  {% include html_css_project.html project=project %}
+
+  {%assign next_index = forloop.index0 | plus: 1%}
+
+  {% unless forloop.last%}
+    {% if site.data.html_css_projects[next_index].include_separator %}
+      <div class="html-css-project-separator" style = "background:linear-gradient({{project.background_color}},{{site.data.html_css_projects[next_index].background_color}}); height:300px;"></div>
+    {% endif %}
+  {% endunless %}
+{% endfor %}
+

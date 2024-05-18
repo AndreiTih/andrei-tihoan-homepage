@@ -1,0 +1,109 @@
+---
+
+---
+
+#profile-card-component {
+  min-height: 100vh;
+  padding-top: 1px;
+  background-color: #19a2ae;
+  background-image: url({{"single_page_html_projects/assets/profile-card-component/images/bg-pattern-top.svg" | relative_url }}), url({{"single_page_html_projects/assets/profile-card-component/images/bg-pattern-bottom.svg" | relative_url}});
+  background-position: right 52vw bottom 75vh, left 48vw top 35vh;
+  background-repeat: no-repeat, no-repeat; }
+  #profile-card-component * {
+    margin: 0px;
+    padding: 0px; }
+  #profile-card-component p, #profile-card-component span {
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300; }
+  #profile-card-component hr {
+    border-bottom: 1px solid #e4ded8;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px; }
+  #profile-card-component .main-content {
+    margin-top: 20vh; }
+  #profile-card-component .profile-card {
+    width: 330px;
+    height: 375px;
+    margin: auto;
+    background-image: url({{"single_page_html_projects/assets/profile-card-component/images/bg-pattern-card.svg" | relative_url}});
+    background-position: top;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: auto, 140px;
+    border-radius: 15px; }
+  #profile-card-component .profile-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 200px; }
+  #profile-card-component .profile-img {
+    width: 95px;
+    border: 6px solid white;
+    border-radius: 50%; }
+  #profile-card-component .name-age-location {
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+  #profile-card-component .name-age-location .name {
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300;
+    color: #2d3248;
+    font-size: 1.1em; }
+  #profile-card-component .name-age-location .age {
+    padding-left: 5px;
+    color: #6a6f81;
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300;
+    font-size: 1.1em; }
+  #profile-card-component .name-age-location .location {
+    display: flex;
+    justify-content: center;
+    margin-top: 7px;
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300;
+    font-size: 0.9em;
+    color: #6a6f81; }
+  #profile-card-component .followers-likes-photos {
+    display: flex;
+    width: 100%;
+    height: 90px; }
+  #profile-card-component .following-metric {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 0; }
+  #profile-card-component .following-metric .metric-value {
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300;
+    color: #2d3248;
+    font-size: 1.1em; }
+  #profile-card-component .following-metric .metric-name {
+    margin-top: 5px;
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300;
+    font-size: 0.60em;
+    letter-spacing: 2px;
+    color: #969696; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,339 @@
+#interactive-comment-section {
+    min-height:100vh;
+  /*## Colors*/
+  /*### Primary*/
+  /*### Neutral*/
+  /* Github colors*/
+  /* Family: [Rubik](https://fonts.google.com/specimen/Rubik) */
+  /*
+   This container will hold the modules that allows you to interact
+   with this comment. 
+   The .comment class is meant to be inherited by a .comment-yours or .comment-other class
+   If it's someone else's comment, it'll hold a reply button in the DOM.
+   If it's your own comment, it'll hold a delete and edit button in the DOM.
+   */
+  /*
+   * .comment-other subclass of .comment
+   */
+  /*
+   * .comment-yours subclass of .comment
+   */
+  /*
+  Class that represents the little icon and text such as:
+  the reply or delete or edit buttons. Meant to be inherited by those
+  to make tiny adjustments to alignments and such.
+  
+   */
+  /* Subclass of .icon-text. Represents the reply button*/
+  /*Subclass of icon-text, represents the delete button*/
+  /*Subclass of icon-text, represents the edit button*/
+  background-color: #f5f6fa;
+  padding-top: 1px; }
+  #interactive-comment-section * {
+    margin: 0px;
+    padding: 0px;
+    line-height: initial; }
+  #interactive-comment-section p, #interactive-comment-section h1, #interactive-comment-section h2, #interactive-comment-section textarea, #interactive-comment-section li {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal; }
+  #interactive-comment-section ul {
+    padding-left: 40px; }
+  #interactive-comment-section button {
+    border-width: 0;
+    cursor: pointer; }
+  #interactive-comment-section textarea, #interactive-comment-section input {
+    color: #67727e;
+    font-size: 1em; }
+  #interactive-comment-section textarea {
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-top: 10px;
+    resize: none; }
+  #interactive-comment-section input {
+    box-sizing: border-box;
+    padding-left: 10px; }
+  #interactive-comment-section textarea:focus, #interactive-comment-section input:focus {
+    outline: none !important;
+    border-color: #324152 !important; }
+  #interactive-comment-section button:hover {
+    opacity: 0.5; }
+  #interactive-comment-section .is-not-logged-in .login-status-banner {
+    display: none; }
+  #interactive-comment-section .is-logged-in .form-login {
+    display: none; }
+  #interactive-comment-section .comment {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 730px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 15px; }
+  #interactive-comment-section .comment-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 18px; }
+  #interactive-comment-section .name-date-text-container {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 70%; }
+  #interactive-comment-section .name-date {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px; }
+  #interactive-comment-section .name-date > .date {
+    padding-left: 10px;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #324152;
+    font-size: 1em; }
+  #interactive-comment-section .name-date-text-container > p {
+    min-height: 2em;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #67727e;
+    line-height: 1.4em; }
+  #interactive-comment-section .interaction-container {
+    max-width: 140px;
+    height: 40px;
+    position: absolute;
+    bottom: 18px;
+    right: 18px; }
+  @media (min-width: 850px) {
+    #interactive-comment-section .interaction-container {
+      top: 23px;
+      right: 18px; }
+    #interactive-comment-section .comment-main-container {
+      flex-direction: row; } }
+  #interactive-comment-section .comment-other .interaction-container {
+    display: flex;
+    width: 70px; }
+  #interactive-comment-section .comment-yours .interaction-container {
+    display: flex;
+    width: 140px; }
+  #interactive-comment-section .form-comment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+    max-width: 730px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 18px;
+    background-color: white;
+    border-radius: 10px; }
+  #interactive-comment-section .form-comment > .text-input {
+    width: 100%;
+    height: 60%;
+    position: relative;
+    border: 1px #eaecf1 solid;
+    border-radius: 10px; }
+  #interactive-comment-section .form-comment > .text-input::placeholder {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal; }
+  #interactive-comment-section .form-comment > .send-button {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #5457b6;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    color: white; }
+  #interactive-comment-section .votes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    background-color: #f5f6fa;
+    border-radius: 10px; }
+  #interactive-comment-section .votes > .plus, #interactive-comment-section .votes > .minus {
+    flex: 1 1 0;
+    padding: 15px; }
+  #interactive-comment-section .votes > .minus {
+    padding-bottom: 20px; }
+  #interactive-comment-section .votes > .plus {
+    padding-top: 18px; }
+  #interactive-comment-section .plus > img, #interactive-comment-section .minus > img {
+    width: 100%; }
+  #interactive-comment-section .votes > .score {
+    flex: 1 1 0;
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: #5457b6; }
+  @media (min-width: 850px) {
+    #interactive-comment-section .votes {
+      flex-direction: column;
+      order: -1;
+      width: 40px;
+      height: 100px;
+      margin-top: 17px;
+      margin-right: 20px; }
+    #interactive-comment-section .votes > .plus, #interactive-comment-section .votes > .minus {
+      flex: 1 1 0;
+      padding: 0px; }
+    #interactive-comment-section .votes > .plus {
+      padding-top: 10px; } }
+  #interactive-comment-section .icon-text {
+    display: flex;
+    width: 100%;
+    cursor: pointer; }
+  #interactive-comment-section .icon-text > .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%; }
+  #interactive-comment-section .icon-text > .icon-container > img {
+    width: 14px;
+    height: 14px; }
+  #interactive-comment-section .icon-text > .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: #5457b6; }
+  #interactive-comment-section .icon-text:hover {
+    opacity: 0.5; }
+  #interactive-comment-section .icon-text-reply > .icon-container {
+    padding-top: 1px; }
+  #interactive-comment-section .icon-text-delete {
+    width: 50%; }
+  #interactive-comment-section .icon-text-edit {
+    width: 50%; }
+  #interactive-comment-section .icon-text-edit > .icon-container > img {
+    padding-left: 12px; }
+  #interactive-comment-section .form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 200px;
+    max-width: 730px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 18px;
+    background-color: white;
+    border-radius: 10px; }
+  #interactive-comment-section .form-login > .username-input {
+    width: 100%;
+    height: 37px;
+    border: 1px #eaecf1 solid;
+    border-radius: 10px; }
+  #interactive-comment-section .form-login > .username-input::placeholder {
+    padding-left: 10px;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal; }
+  #interactive-comment-section .form-login > .login-button {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #5457b6;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    color: white; }
+  @media (max-width: 500px) {
+    #interactive-comment-section .form-login {
+      min-height: 150px; } }
+  #interactive-comment-section .login-status-banner {
+    position: sticky;
+    top: 0px;
+    background-color: #eaecf1;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    font-size: 1em; }
+  #interactive-comment-section .notes {
+    background-color: white;
+    height: 100%;
+    border-radius: 10px; }
+  #interactive-comment-section .notes-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafbfc;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 40px; }
+  #interactive-comment-section .notes .github-button {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1em;
+    color: #24292e;
+    background-color: #fafbfc; }
+  #interactive-comment-section .comments-container {
+    display: block; }
+  #interactive-comment-section .main-content {
+    max-width: 730px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh; }
+  @media (min-width: 376px) {
+    #interactive-comment-section .main-content {
+      min-width: 345px;
+      width: 60%; } }
+  @media (max-width: 375px) {
+    #interactive-comment-section .main-content {
+      min-width: 345px;
+      margin-left: auto;
+      margin-right: auto; } }
+  #interactive-comment-section #aside-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    max-width: 500px;
+    margin-left: 20px; }
+  @media (max-width: 500px) {
+    #interactive-comment-section #aside-content {
+      display: none; } }
+  #interactive-comment-section #content {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    max-width: 1080px;
+    margin: auto;
+    margin-top: 10vh; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,587 @@
+
+- name: "Fylo landing page"
+  include_separator: false
+  background_color: "white"
+  description: |
+    Implementation of the Fylo Landing Page design from frontendmentors.io
+  html_body: |
+    <div id="fylo_landing_page">
+        <header>
+            <img class="company-logo" src="assets/fylo_landing_page/images/logo.svg" alt="Company logo. Has three rectangular stacks placed one on top of the other, next to the company name: Fylo.">
+            <nav class="main-navigation-menu">
+                <ul>
+                    <li>Features</li>
+                    <li>Team</li>
+                    <li>Sign in</li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <div class="section-base hero-section">
+            <section class="hook-section">
+                <h1>
+                    All your files in one secure location, accessible anywhere.
+                </h1>
+                <p>
+                Fylo stores your most important files in one secure location. 
+                Access them wherever you need, share and collaborate with friends, 
+                family, and co-workers.
+                </p>
+                <form action="" class="email-submit-form">
+                    <input class="email-entry" type="text" placeholder="Enter your email...">
+                    <input type="submit" value="Get Started">
+                </form>
+
+            </section>
+            <div class="img-container">
+                <img class="hero-image" src="assets/fylo_landing_page/images/illustration-1.svg" alt="Image of people removing documents from a digital folder icon.">
+            </div>
+        </div>
+
+
+        <div class="section-base section-1">
+            <section>
+                <h1>
+                    Stay productive, wherever you are
+                </h1>
+                <p>
+                Never let location be an issue when accessing your files. Fylo has you 
+                covered for all of your file storage needs.
+                </p>
+
+                <p>
+                Securely share files and folders with friends, family and colleagues for 
+                live collaboration. No email attachments required!
+                </p>
+                <a class="green-link" href="facebook.com">
+                    See how Fylo works
+                    <img class="link-icon" src="assets/fylo_landing_page/images/icon-arrow.svg">
+                </a>
+
+                <div class="testimonial-card">
+                    <!--LEFT AT IMPLEMENTING THIS. Start with html layout and go from there.-->
+                    <img class= "icon-quotes" src="assets/fylo_landing_page/images/icon-quotes.svg" alt="Image of quotes.">
+                    <p class="testimonial-text">
+                    Fylo has improved our team productivity by an order of magnitude. Since 
+                    making the switch our team has become a well-oiled collaboration machine.
+                    </p>
+                    <div class="profile-data">
+                        <img class= "profile-image" src="assets/fylo_landing_page/images/avatar-testimonial.jpg" alt="Profile image of testimonial">
+                        <div class= "name-and-title">
+                            <h1 class="profile-name">Kyle Burton</h1>
+                            <p class="profile-title">Founder & CEO, Huddle</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <div class="img-container">
+                <img src="assets/fylo_landing_page/images/illustration-2.svg" alt="Image section 2">
+            </div>
+        </div>
+
+        <div class="section-2">
+
+            <section>
+                <h1>
+                    Get early access today
+                </h1>
+                <p>
+                It only takes a minute to sign up and our free starter tier is extremely generous. 
+                If you have any questions, our support team would be happy to help you.
+                </p>
+            </section>
+
+            <form action="" class="email-submit-form">
+                <input class="email-entry" type="text" placeholder="email@example.com">
+                <input type="submit" value="Get Started For Free">
+            </form>
+
+
+        </div>
+
+        <footer>
+            <img class="logo" src="assets/fylo_landing_page/images/logo-white.svg" alt="">
+            <div class="footer-container">
+                <div class="contact-info">
+                    <div class="contact-element ">
+                        <img src="assets/fylo_landing_page/images/icon-phone.svg" alt="">
+                        <p>Phone: +1-543-123-4567</p>
+                    </div>
+
+                    <div class="contact-element ">
+                        <img src="assets/fylo_landing_page/images/icon-email.svg" alt="">
+                        <p>example@fylo.com</p>
+                    </div>
+                </div>
+                <div class="col1">
+                    <p>About Us</p> 
+                    <p>Jobs</p> 
+                    <p>Press</p> 
+                    <p>Blog</p> 
+                </div>
+                <div class="col2">
+                    <p>Contact Us</p>
+                    <p>Terms</p>
+                    <p>Privacy</p>
+                </div>
+                <div class="socials-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#FFFFFF" d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#FFFFFF" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#FFFFFF" d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"/></svg>
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+  html_head: |
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/html_css_projects/fylo_landing_page.css">
+
+- name: "Chat app css illustration"
+  include_separator: true
+  background_color: "white"
+  description: |
+    Implementation of the Chat app illustration design from frontendmentors.io
+  html_body: |
+    <div id="chat_app_illustration">
+
+        <div class="hero-section">
+            <div class="section-phone">
+                <div class="phone">
+                    <div class="phone-top">
+                        <div class="notch"></div>
+                        <div class="user-receiver-heading">
+                            <div class="arrow-left"></div>
+                            <img class="receiver-profile-img" src="assets/chat_app_illustration/images/avatar.jpg" alt="Reciever profile image">
+                            <div class="receiver-name-status">
+                                <h1 class="name">Samuel Green</h1>
+                                <p class="status">Available to walk</p>
+                            </div>
+                            <div class="hamburger-menu"></div>
+                        </div>
+                    </div>
+                    <div class="message-container">
+                        <p class="message message-receiver">That sounds great. I’d be happy with that.</p>
+                        <p class="message message-receiver">Could you send over some pictures of your dog, please?</p>
+                        <div class="image-collection sender-image-collection">
+                            <img class="chat-image" src="assets/chat_app_illustration/images/dog-image-1.jpg" alt="Sender image">
+                            <img class="chat-image" src="assets/chat_app_illustration/images/dog-image-2.jpg" alt="Sender image">
+                            <img class="chat-image" src="assets/chat_app_illustration/images/dog-image-3.jpg" alt="Sender image">
+                        </div>
+                        <p class="message message-sender">Here are a few pictures. She’s a happy girl!</p>
+                        <p class="message message-sender">Can you make it?</p>
+                        <p class="message message-receiver">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+                        <div class="message message-walk-option">
+                            <div class="message-walk-option-checkbox"></div>
+                            <p>30 minute walk</p>
+                            <div class="price">$29</div>
+                        </div>
+                        <div class="message message-walk-option">
+                            <div class="message-walk-option-checkbox"></div>
+                            <p>1 hour walk</p>
+                            <div class="price">$49</div>
+                        </div>
+                    </div>
+
+                    <div class="form-comment">
+                        <textarea name= "comment_content" type=text class="text-input" placeholder="Type a message..."></textarea>
+                        <button class="send-button"></button>
+                    </div>
+
+                </div>
+                <div class="background-column-dark"></div>
+            </div>
+            <div class="section-text">
+                <div class="background-column-light"></div>
+                <div class="section-text-container">
+                    <h1>Simple booking</h1>
+                    <p>
+                    Stay in touch with our dog walkers through the chat interface. This makes it easy to 
+                    discuss arrangements and make bookings. Once the walk has been completed you can rate 
+                    your walker and book again all through the chat.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+  html_head: |
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/html_css_projects/chat_app_illustration.css">
+
+- name: "interactive comment section"
+  include_separator: true
+  background_color: "#f5f6fa"
+  description: |
+    Implementation of the interactive comment section design from frontendmentors.
+  html_body: |
+    <div id="interactive-comment-section">
+      <div class="main-content">
+          <div class="link-fullstack">
+              I implemeneted a <a href="http://91.108.112.220:80">fullstack solution</a> for this project.
+          </div>
+
+          <section class="comments-container">
+              <div class="comment comment-other">
+                  <div class="comment-main-container">
+                      <div class="name-date-text-container">
+                          <div class="name-date">
+                              <p class="name">amyrobson</p>
+                              <p class="date">3 weeks ago</p>
+                          </div>
+                          <p>
+                          Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+                          </p>
+
+                      </div>
+                      <div class="votes">
+                          <div class="plus"><img src="assets/interactive_comment_section/images/icon-plus.svg"></div>
+                          <div class = "score">5</div>
+                          <div class="minus"> <img src="assets/interactive_comment_section/images/icon-minus.svg"></div>
+                      </div>
+
+                      <div class="interaction-container">
+                          <div class="icon-text icon-text-reply">
+                              <div class="icon-container"><img src="assets/interactive_comment_section/images/icon-reply.svg"></div>
+                              <div class="text">Reply</div>
+                          </div>
+
+                      </div>
+                  </div>
+
+              </div>
+              <div class="comment comment-yours">
+                  <div class="comment-main-container">
+                      <div class="name-date-text-container">
+                          <div class="name-date">
+                              <p class="name">Andrei</p>
+                              <p class="date">2 weeks ago</p>
+                          </div>
+                          <p>
+                          Woah, your project looks awesome! How long have you been coding for? I'm still new, but I think I want to dive into React as well soon. Prehaps you can give me an insight on where I can learn React? Thanks!
+                          </p>
+
+                      </div>
+                      <div class="votes">
+                          <div class="plus"><img src="assets/interactive_comment_section/images/icon-plus.svg"></div>
+                          <div class = "score">5</div>
+                          <div class="minus"> <img src="assets/interactive_comment_section/images/icon-minus.svg"></div>
+                      </div>
+
+                      <div class="interaction-container">
+                          <div class="icon-text icon-text-delete">
+                              <div class="icon-container"><img src="assets/interactive_comment_section/images/icon-delete.svg"></div>
+                              <div class="text">Delete</div>
+                          </div>
+                          <div class="icon-text icon-text-edit">
+                              <div class="icon-container"><img src="assets/interactive_comment_section/images/icon-edit.svg"></div>
+                              <div class="text">Edit</div>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="comment comment-other">
+                  <div class="comment-main-container">
+                      <div class="name-date-text-container">
+                          <div class="name-date">
+                              <p class="name">Alberto</p>
+                              <p class="date">2 weeks ago</p>
+                          </div>
+                          <p>
+                          If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS and JS before considering React. It's very tempting to jump ahead but lay a foundation first.
+                          </p>
+
+                      </div>
+                      <div class="votes">
+                          <div class="plus"><img src="assets/interactive_comment_section/images/icon-plus.svg"></div>
+                          <div class = "score">5</div>
+                          <div class="minus"> <img src="assets/interactive_comment_section/images/icon-minus.svg"></div>
+                      </div>
+
+                      <div class="interaction-container">
+                          <div class="icon-text icon-text-reply">
+                              <div class="icon-container"><img src="assets/interactive_comment_section/images/icon-reply.svg"></div>
+                              <div class="text">Reply</div>
+                          </div>
+
+                      </div>
+                  </div>
+
+              </div>
+              <div class="comment comment-other">
+                  <div class="comment-main-container">
+                      <div class="name-date-text-container">
+                          <div class="name-date">
+                              <p class="name">maxblagun</p>
+                              <p class="date">2 weeks ago</p>
+                          </div>
+                          <p>
+                          I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant. 
+                          </p>
+
+                      </div>
+                      <div class="votes">
+                          <div class="plus"><img src="assets/interactive_comment_section/images/icon-plus.svg"></div>
+                          <div class = "score">5</div>
+                          <div class="minus"> <img src="assets/interactive_comment_section/images/icon-minus.svg"></div>
+                      </div>
+
+                      <div class="interaction-container">
+                          <div class="icon-text icon-text-reply">
+                              <div class="icon-container"><img src="assets/interactive_comment_section/images/icon-reply.svg"></div>
+                              <div class="text">Reply</div>
+                          </div>
+
+                      </div>
+                  </div>
+
+              </div>
+
+
+              <form method="POST" action="/send-comment" class="form-comment">
+                  <textarea name= "comment_content" type=text class="text-input" placeholder="Add a comment..."></textarea>
+                  <button type= "submit" class="send-button"> SEND </button>
+              </form>
+
+          </section>
+      </div>
+    </div>
+  html_head: |
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/html_css_projects/interactive_comment_section.css">
+
+- name: "Connect four game"
+  include_separator: true
+  background_color: "#7945FF"
+  description: |
+    Implementation of the connect four design from frontend mentors.
+  html_body: |
+    <div id="connect_four">
+        <div class="scene-board">
+            <div class="centered-container">
+                <div class="game-container">
+                    <div class="game-menu">
+                        <button class="in-game-button">MENU</button>
+                        <img class="logo" src="assets/connect_four/images/logo.svg" alt="Game's logo">
+                        <button class="in-game-button">RESTART</button>
+
+                    </div>
+                    <div class="score score-player1">
+                        <img class="score-logo" src="assets/connect_four/images/player-one.svg" alt="Smiling face image representing player 1.">
+                        <h3 class="player-label">PLAYER 1</h3>
+                        <h1 class="score-value">12</h1>
+                    </div>
+
+                    <div class="board-container">
+                        <div class="board-shadow"></div>
+                        <div class="board-white"></div>
+
+                        <div class="marker marker-player2"></div>
+
+                        <div class="counter-container">
+                            <div class="counter counter-player1" style="grid-area:6/5;"></div>
+                            <div class="counter counter-player2" style="grid-area:6/4;"></div>
+                            <div class="counter counter-player1" style="grid-area:5/4;"></div>
+                        </div>
+                    </div>
+
+                    <div class="score score-player2">
+                        <img class="score-logo" src="assets/connect_four/images/player-two.svg" alt="Smiling face image representing player 2.">
+                        <h3 class="player-label">PLAYER 2</h3>
+                        <h1 class="score-value">23</h1>
+                    </div>
+
+                    <div class="turn-counter turn-counter-player2">
+                        <p class="player-turn-label">PLAYER 2'S TURN</p>
+                        <h1 class="timer-value">3s</h1>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  html_head: |
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/html_css_projects/connect_four.css">
+
+- name: "Results summary component"
+  include_separator: true
+  background_color: "white"
+  description: |
+    Implementation of the Results Summary Component design from frontendmentors.io
+  html_body: |
+    <div id="results-summary-component">
+        <div class="main-content">
+            <div class= "result-summary">
+                <div class= "result">
+                    <h1>Your Result</h1>
+                    <div class = "score-container">
+                        <p class = "score-current" > 76 </p>
+                        <p class = "score-max">of 100</p>
+                    </div>
+                    <h2>Great</h2>
+
+                    <p>You scored higher than 65% of the people who have taken these tests.</p>
+
+                </div>
+
+                <div class = "summary">
+
+                    <div class = "summary-container">
+                        <p>Summary</p>
+
+                        <div class = "summary-metric-container">
+
+                            <div class = "metric-item light-red-background">
+                                <img src = "assets/results_summary_component/images/icon-reaction.svg" ></img>
+                                <p class = "light-red-text">Reaction</p>
+                                <div class = "current-max-container" ><span>80</span> <span>/ 100</span></div>
+                            </div>
+                            <div class = "metric-item orangey-yellow-background orangey-yellow-text">
+                                <img src = "assets/results_summary_component/images/icon-memory.svg"></img>
+                                <p >Memory</p>
+                                <div class = "current-max-container"><span>92</span> <span>/ 100</span></div>
+                            </div>
+                            <div class = "metric-item green-teal-background green-teal-text">
+                                <img src = "assets/results_summary_component/images/icon-verbal.svg"></img>
+                                <p>Verbal</p>
+                                <div class = "current-max-container"><span>61</span> <span>/ 100</span></div>
+                            </div>
+                            <div class = "metric-item cobalt-blue-background cobalt-blue-text">
+                                <img src = "assets/results_summary_component/images/icon-visual.svg"></img>
+                                <p>Visual</p>
+                                <div class = "current-max-container"><span>72</span> <span>/ 100</span></div>
+                            </div>
+                        </div>
+
+                        <!-- This part of the component is somewhat inflexible. Ideally I'd like its height to be the same as the metric components
+                            But I couldn't figure out how to do that and place it at the very bottom and maintain the space between items.
+                        -->
+                        <div class = button-container style=""> 
+                            <button class = "dark-gray-blue-background " style="">Continue</button>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  html_head: |
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/html_css_projects/results_summary_component.css">
+
+
+- name: "Four card feature section"
+  background_color: "white"
+  include_separator: true
+  description: |
+    Implementation of the four card feature section design from frontendmentors.io
+  html_body: |
+    <div id="four-card-feature-section">
+      <header>
+          <div class="header-title">
+              <h1 class = "title-first-line">Reliable, efficient delivery</h1>
+              <h1 class= "title-second-line" >Powered by Technology</h1>
+          </div>
+          <p class="header-hook">
+          Our Artificial Intelligence powered tools use millions of project data points 
+          to ensure that your project is successful
+          </p>
+
+      </header>
+      <div class="main-content">
+          <div class="features-container">
+              <div class="feature-card flex-align-center border-top-cyan" >
+                  <h1>
+                      Supervisor
+                  </h1>
+                  <p>
+                  Monitors activity to identify project roadblocks
+                  </p>
+                  <img class="feature-card-icon" src="assets/four_card_feature_section/images/icon-supervisor.svg">
+              </div>
+              <div class="features-column-container">
+                  <div class="feature-card border-top-red" >
+                      <h1>
+                          Team Builder
+                      </h1>
+                      <p>
+                      Scans our talent network to create the optimal team for your project
+                      </p>
+                      <img class="feature-card-icon" src="assets/four_card_feature_section/images/icon-team-builder.svg" alt="">
+                  </div>
+                  <div class="feature-card border-top-orange" >
+                      <h1>
+                          Karma
+                      </h1>
+                      <p>
+                      Regularly evaluates our talent to ensure quality
+                      </p>
+                      <img class="feature-card-icon" src="assets/four_card_feature_section/images/icon-karma.svg" alt="">
+                  </div>
+              </div>
+              <div class="feature-card flex-align-center border-top-blue" >
+                  <h1>
+                      Calculator
+                  </h1>
+                  <p>
+                  Uses data from past projects to provide better delivery estimates
+                  </p>
+                  <img class="feature-card-icon" src="assets/four_card_feature_section/images/icon-calculator.svg" alt="">
+              </div>
+          </div>
+      </div>
+    </div>
+  html_head: |
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/html_css_projects/four_card_feature_section.css">
+
+- name: "profile card component"
+  include_separator: false
+  background_color: "#19a2ae"
+  description: |
+    Implementation of the profile card component design from frontendmentors.io
+  html_body: |
+    <div id=profile-card-component>
+        <div class="main-content">
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <img class = "profile-img" src="assets/profile-card-component/images/image-victor.jpg" alt = "profile image"></img>
+                </div>
+                <div class="name-age-location">
+                    <div class="name-age">
+                        <span class="name">Victor Crest</span> <span class="age"> 26</span>
+                    </div>
+                    <div class="location">London </div>
+                </div>
+                <hr>
+                <div class="followers-likes-photos">
+                    <div class="following-metric">
+                        <div class="metric-value">80k</div>
+                        <p class="metric-name">Followers</p>
+                    </div>
+                    <div class="following-metric">
+                        <div class="metric-value">803k</div>
+                        <p class="metric-name">Likes</p>
+                    </div>
+                    <div class="following-metric">
+                        <div class="metric-value">1.4k</div>
+                        <p class="metric-name">Photos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  html_head: |
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/html_css_projects/profile_card_component.css" >
+

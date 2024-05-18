@@ -1,0 +1,77 @@
+@use "sass:math";
+//## Colors
+
+//### Primary
+
+$very-dark-blue: hsl(243, 87%, 12%);
+$very-dark-blue-transparent: hsla(243, 87%, 12%, 15.7%);
+$dark-very-transparent: hsla(243, 87%, 12%, 5.7%);
+$desaturated-blue: hsl(238, 22%, 44%);
+
+//### Accent
+
+$bright-blue: hsl(224, 93%, 58%);
+$moderate-cyan: hsl(170, 45%, 43%);
+
+//### Neutral
+
+$light-grayish-blue: hsl(240, 75%, 98%);
+$light-gray: hsl(0, 0%, 75%);
+
+
+//Spacing
+//The reason I'm putting this data in a variable and not placing everything in a container is related
+//to the background color of a section. It won't stretch to the sides of the screen if the section itself is in a container.
+$global-padding-side :5vw;
+
+/* Common breakpoints */
+
+// $bp-none < 640px
+$breakpoint-sm:640px;
+$breakpoint-md:768px;
+$breakpoint-lg:1024px;
+$breakpoint-xl:1280px;
+$breakpoint-2xl:1536px;
+
+//## Typography
+
+//### Fonts
+
+//#### Headings, Call-to-actions, Header Navigation
+
+//- Family: [Raleway](https://fonts.google.com/specimen/Raleway)
+//- Weights: 400, 700
+@mixin raleway($weight) {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+}
+
+//#### Body
+
+//- Family: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
+//- Weights: 400
+@mixin open-sans($weight) {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+@function px-to-rem($px) {
+    $rems: math.div($px, 16px) * 1rem;
+    @return $rems;
+}
+
+@function fluid($min-size, $max-size, $min-breakpoint, $max-breakpoint, $unit: vw) {
+    $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
+    $slope-to-unit: $slope * 100;
+    $intercept-rem: px-to-rem($min-size - $slope * $min-breakpoint);
+    $min-size-rem: px-to-rem($min-size);
+    $max-size-rem: px-to-rem($max-size);
+    @return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
+}

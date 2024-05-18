@@ -1,0 +1,79 @@
+---
+layout: empty
+title: "Connect Four"
+---
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
+
+
+  <!-- Copy this bit over to the html_head property of _data/html_css_projects.yml -->
+  <!-- Here is where you import your font stuff -->
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body style="margin:0px; border:0px;">
+  <!-- Copy this bit over to the html_body property of _data/html_css_projects.yml -->
+  <!-- Change this id to the name of the project. Don't forget to change it in the style.scss as well
+  as the intermediary folder name inside assets-->
+
+    <div id="connect_four">
+
+        <div class="scene-board">
+            <div class="centered-container">
+
+
+                <div class="game-container">
+
+                    <div class="game-menu">
+                        <button class="in-game-button">MENU</button>
+                        <img class="logo" src="assets/connect_four/images/logo.svg" alt="Game's logo">
+                        <button class="in-game-button">RESTART</button>
+
+                    </div>
+                    <div class="score score-player1">
+                        <img class="score-logo" src="assets/connect_four/images/player-one.svg" alt="Smiling face image representing player 1.">
+                        <h3 class="player-label">PLAYER 1</h3>
+                        <h1 class="score-value">12</h1>
+                    </div>
+
+                    <div class="board-container">
+                        <div class="board-shadow"></div>
+                        <div class="board-white"></div>
+
+                        <div class="marker marker-player2"></div>
+
+                        <div class="counter-container">
+                            <div class="counter counter-player1" style="grid-area:6/5;"></div>
+                            <div class="counter counter-player2" style="grid-area:6/4;"></div>
+                            <div class="counter counter-player1" style="grid-area:5/4;"></div>
+                        </div>
+                    </div>
+
+                    <div class="score score-player2">
+                        <img class="score-logo" src="assets/connect_four/images/player-two.svg" alt="Smiling face image representing player 2.">
+                        <h3 class="player-label">PLAYER 2</h3>
+                        <h1 class="score-value">23</h1>
+                    </div>
+
+                    <div class="turn-counter turn-counter-player2">
+                        <p class="player-turn-label">PLAYER 2'S TURN</p>
+                        <h1 class="timer-value">3s</h1>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>

@@ -1,0 +1,68 @@
+footer
+{
+    background-color:$very-dark-blue;
+    padding: 4rem $global-padding-side 0px $global-padding-side; 
+
+    .footer-container
+    {
+        display:flex;
+    }
+
+    p
+    {
+        color:white;
+    }
+
+    .logo
+    {
+        margin-bottom:1rem;
+    }
+
+    .contact-info,
+    .col1,
+    .col2,
+    .socials-container
+    {
+        flex:1; 
+    }
+    .contact-info
+    {
+        min-width:217px;
+    }
+
+    .col1,
+    .col2
+    {
+        p
+        {
+            margin-bottom:1rem;
+        }
+    }
+
+}
+
+
+@media (max-width:$breakpoint-sm)
+{
+    footer
+    {
+        padding-bottom:3rem;
+        .logo
+        {
+            margin-bottom:2rem;
+        }
+        .footer-container
+        {
+            flex-direction:column;
+            gap:2rem;
+        }
+
+        .socials-container
+        {
+            align-self:center;
+        }
+    }
+    
+}
+
+

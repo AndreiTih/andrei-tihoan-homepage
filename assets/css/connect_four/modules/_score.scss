@@ -1,0 +1,152 @@
+.score
+{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    width:141px;
+    height:187px;
+    
+    box-sizing:border-box;
+    border: 3px solid black;
+
+    background-color:white;
+    border-radius:20px;
+    box-shadow: 0px 10px black;
+
+    .score-logo
+    {
+        position:absolute;
+        top:-27px;
+    }
+
+    .player-label
+    {
+        position:absolute;
+        top:46px;
+    }
+    .score-value
+    {
+        position:absolute;
+        bottom:17px;
+    }
+}
+
+
+.score-player1
+{
+    grid-area: P1;
+    align-self:center;
+}
+
+.score-player2
+{
+    grid-area: P2;
+    align-self:center;
+}
+
+
+@media (max-width:$breakpoint-lg)
+{
+    .score
+    {
+        width:272px;
+        height:100px;
+    }
+
+    .score-player1
+    {
+        justify-self:self-start;
+
+        .player-label
+        {
+            position:absolute;
+            top:revert;
+            left:44px;
+        }
+        .score-value
+        {
+            position:absolute;
+            bottom:revert;
+            right:20px;
+        }
+        .score-logo
+        {
+            position:absolute;
+            top:revert;
+            left:-27px;
+        }
+
+    }
+
+    .score-player2
+    {
+        justify-self:self-end;
+        .player-label
+        {
+            position:absolute;
+            top:revert;
+            right:44px;
+        }
+        .score-value
+        {
+            position:absolute;
+            bottom:revert;
+            left:20px;
+        }
+        .score-logo
+        {
+            position:absolute;
+            top:revert;
+            right:-27px;
+        }
+
+    }
+}
+
+
+@media (max-width:$breakpoint-board)
+{
+    
+    .score
+    {
+        width:142px;
+        height:82px;
+
+        .player-label
+        {
+            right:initial;
+            left:initial;
+            top:10px;
+
+            font-size:1rem;
+            line-height:21px;
+            @include space-grotesk(500);
+        }
+        .score-value
+        {
+            right:initial;
+            left:initial;
+            bottom:9px;
+
+            font-size:2rem;
+            line-height:31px;
+            @include space-grotesk(700);
+        }
+    }
+    .score-player1
+    {
+        justify-self:self-end;
+        margin-right:10px;
+    }
+    .score-player2
+    {
+        justify-self:self-start;
+        margin-left:10px;
+    }
+}
+
+
+

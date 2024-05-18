@@ -1,0 +1,293 @@
+#results-summary-component {
+    min-height:70vh;
+  /*Colors:*/
+  /*Mixins*/
+  /*
+   * Result component
+   */
+  /*
+   * States
+   */
+  /* Media breakpoints */
+  /*
+   * summary
+   */
+  /*
+   * States
+   */
+  /*Hover state on the continue button*/
+  /*Media breakpoints*/
+  /*
+   * metric-item module
+   * An item that represents metric. Sits inside a flex container with 4 elements whose grow factors total to 0.8
+   * Probably not the best name at the moment
+   */
+  /*I wanted to refactor this into a more generic class, but then I'd have to refactor all of the selectors too. Maybe worth it, idk*/
+  /*For the current*/
+  /*For the max*/
+  /*-- Result summary component --*/
+  /*TODO: This is more of a container style. That contains 2 other components, so I'd move this to layout.*/
+  /*
+   * States:
+   */
+  /*Desktop size*/ }
+  #results-summary-component * {
+    margin: 0px;
+    border: 0px;
+    line-height: initial;
+}
+  #results-summary-component p, #results-summary-component h1, #results-summary-component h2 {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal; }
+  #results-summary-component button:hover {
+      opacity:0.85;
+  }
+  #results-summary-component button {
+    /*hanken grotesk 500*/
+    font-family: "Hanken Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal; }
+  #results-summary-component .light-red-background {
+    background-color: rgba(255, 87, 87, 0.1); }
+  #results-summary-component .orangey-yellow-background {
+    background-color: rgba(255, 176, 31, 0.1); }
+  #results-summary-component .green-teal-background {
+    background-color: rgba(0, 189, 145, 0.1); }
+  #results-summary-component .cobalt-blue-background {
+    background-color: rgba(17, 37, 212, 0.1); }
+  #results-summary-component .light-red-text {
+    color: #ff5757; }
+  #results-summary-component .orangey-yellow-text {
+    color: #ffb01f; }
+  #results-summary-component .green-teal-text {
+    color: #00bd91; }
+  #results-summary-component .cobalt-blue-text {
+    color: #1125d4; }
+  #results-summary-component .main-content {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 20vh; }
+  @media (max-width: 375px) {
+    #results-summary-component .main-content {
+      padding-left: 0px;
+      padding-right: 0px; } }
+  #results-summary-component .result {
+    background: linear-gradient(#7857ff, #2e2be9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 445px;
+    width: 325px;
+    border-radius: 30px; }
+  #results-summary-component .result > h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.3em;
+    color: #c8c7ff; }
+  #results-summary-component .result > h2 {
+    font-size: 1.8em;
+    color: white;
+    padding-top: 20px; }
+  #results-summary-component .result > p {
+    padding-top: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #c8c7ff;
+    text-align: center; }
+  #results-summary-component .result > .score-container {
+    display: block;
+    height: 175px;
+    width: 175px;
+    /*TODO: change this to a relative size*/
+    background: linear-gradient(#4e21ca, rgba(36, 33, 202, 0));
+    border-radius: 50%; }
+  #results-summary-component .result > .score-container > .score-current {
+    display: flex;
+    align-items: flex-end;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    height: 70%;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    font-size: 4em; }
+  #results-summary-component .result > .score-container > .score-max {
+    position: relative;
+    bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20%;
+    width: fit-content;
+    color: #c8c7ff; }
+  @media (max-width: 375px) {
+    #results-summary-component .result {
+      height: 355px;
+      width: 375px;
+      border-radius: 0px 0px 30px 30px; }
+    #results-summary-component .result > h1 {
+      font-size: 1.2em; }
+    #results-summary-component .result > h2 {
+      font-size: 1.4em; }
+    #results-summary-component .result > .score-container {
+      height: 140px;
+      width: 140px; }
+    #results-summary-component .result > .score-container > .score-current {
+      font-size: 3.5em; } }
+  #results-summary-component .summary {
+    background-color: white;
+    height: 445px;
+    width: 325px;
+    border-radius: 30px; }
+  #results-summary-component .summary > .summary-container {
+    box-sizing: border-box;
+    padding: 40px;
+    padding-bottom: 45px;
+    padding-top: 30px;
+    height: 100%; }
+  #results-summary-component .summary > .summary-container > p {
+    font-family: "Hanken Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: #303b5a;
+    font-size: 1.35em;
+    height: 12.5%; }
+  #results-summary-component .summary .summary-metric-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 65%; }
+  #results-summary-component .summary .button-container {
+    /*Flex display so the button can have align-self:flex-end. Mabye I should instead make use of paddings that are relative to
+     height variables? This does keep the component actually super flexible so if I were to make the component's height and width
+     fluid it'd still work.*/
+    display: flex;
+    height: 22.5%; }
+  #results-summary-component .summary .button-container > button {
+    /*To center the text inside the button*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    width: 100%;
+    font-size: 1em;
+    border-radius: 30px;
+    height: 44px;
+    /*Make this proportional to what? I don't want it proportional to the container, I want it proprotional to the items
+     And the item size changes. Maybe look into css variables and see if we can somehow leverage those.*/
+    background-color: #303b5a;
+    color: white; }
+  @media (max-width: 375px) {
+    #results-summary-component .summary {
+      background-color: white;
+      height: 445px;
+      width: 375px;
+      border-radius: 30px; }
+    #results-summary-component .summary > .summary-container {
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+      padding-bottom: 45px;
+      padding-top: 25px; }
+    #results-summary-component .summary > .summary-container > p {
+      font-family: "Hanken Grotesk", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+      color: #303b5a;
+      font-size: 1.15em;
+      height: 10%; }
+    #results-summary-component .summary .summary-metric-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 67.5%; }
+    #results-summary-component .summary .button-container {
+      /*Flex display so the button can have align-self:flex-end. Mabye I should instead make use of paddings that are relative to
+      height variables? This does keep the component actually super flexible so if I were to make the component's height and width
+      fluid it'd still work.*/
+      display: flex;
+      height: 22.5%; }
+    #results-summary-component .summary .button-container > button {
+      /*To center the text inside the button*/
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-end;
+      width: 100%;
+      font-size: 1em;
+      border-radius: 30px;
+      height: 57px;
+             /*Make this proportional to what? I don't want it proportional to the container, I want it proprotional to the items
+And the item size changes. Maybe look into css variables and see if we can somehow leverage those.*/
+      background-color: #303b5a;
+      color: white; } }
+  #results-summary-component .metric-item {
+    display: flex;
+    width: 100%;
+    flex-grow: 0.200;
+    flex-shrink: 1;
+    flex-basis: 0;
+    border-radius: 10px;
+    /*Hanken-grotesk-500*/
+    font-family: "Hanken Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal; }
+  #results-summary-component .metric-item > img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    margin-right: 5px;
+    margin-left: 10px; }
+  #results-summary-component .metric-item > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px; }
+  #results-summary-component .metric-item > .current-max-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px; }
+  #results-summary-component .metric-item > .current-max-container > span:first-child {
+    color: #303b5a;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    margin-right: 5px; }
+  #results-summary-component .metric-item > .current-max-container > span:nth-child(2) {
+    color: #9ea0ae;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal; }
+  #results-summary-component .result-summary {
+    flex-direction: column;
+    border-radius: 30px;
+    display: flex;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto; }
+  @media (min-width: 375px) {
+    #results-summary-component .result-summary {
+      flex-direction: row;
+      box-shadow: 15px 15px 30px #ebf1ff; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -37,7 +37,11 @@ contact_urls:
 paginate: 10
 paginate_path: "/writing/page:num"
 permalink: "/writing/:year/:month/:day/:title/"
+
+exclude: []
 sass:
+  load_paths:
+    - /connect_four/assets/connect_four/css
   sass_dir: "/assets/css"
   style: :compressed
 highlighter: rouge

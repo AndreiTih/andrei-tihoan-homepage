@@ -1,0 +1,26 @@
+---
+
+---
+#connect_four
+{
+    @import 'connect_four/mixins';
+    @import 'connect_four/base';
+    @import 'connect_four/utility';
+
+    @import 'connect_four/modules/board';
+    @import 'connect_four/modules/counter';
+    @import 'connect_four/modules/score';
+    @import 'connect_four/modules/turn_counter';
+    @import 'connect_four/modules/game_menu';
+    @import 'connect_four/modules/in_game_button';
+    @import 'connect_four/modules/marker';
+
+    @import 'connect_four/scenes/board';
+    @import 'connect_four/layout/centered';
+    @import 'connect_four/layout/game_container';
+}
+
+
+
+
+

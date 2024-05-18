@@ -1,0 +1,32 @@
+.in-game-button
+{
+   position:relative;
+   width:fit-content;
+   height:fit-content;
+   padding: 9px 20px 10px 20px;
+
+   background-color:$dark-purple;
+   border-radius:20px;
+   color:white;
+   z-index:$z-layer-closest;
+}
+
+.in-game-button:hover
+{
+    color:black;
+    background-color:$light-orange;
+    cursor:pointer;
+}
+
+
+@media (max-width:$breakpoint-board)
+{
+    
+    .in-game-button
+    {
+        min-width:108px;
+        min-height:39px;
+    }
+}
+
+

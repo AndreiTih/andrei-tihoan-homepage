@@ -1,0 +1,110 @@
+#four-card-feature-section {
+    min-height:100vh;
+  /*## Colors*/ }
+  #four-card-feature-section * {
+    margin: 0px;
+    padding: 0px;
+    line-height: initial; }
+  #four-card-feature-section p, #four-card-feature-section h1, #four-card-feature-section h2, #four-card-feature-section h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #4c4e61; }
+  #four-card-feature-section button:hover {
+    opacity: 0.5; }
+  #four-card-feature-section .flex-align-center {
+    align-self: center; }
+  #four-card-feature-section .border-top-red {
+    border-top: 4px solid #ea5353; }
+  #four-card-feature-section .border-top-cyan {
+    border-top: 4px solid #45d3d3; }
+  #four-card-feature-section .border-top-orange {
+    border-top: 4px solid #fcaf4a; }
+  #four-card-feature-section .border-top-blue {
+    border-top: 4px solid #549ef2; }
+  #four-card-feature-section header {
+    height: 250px;
+    min-width: 1160px;
+    margin-top: 10vh;
+    margin-bottom: 50px; }
+  #four-card-feature-section header > .header-title {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em; }
+  #four-card-feature-section .title-first-line {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 2.3em; }
+  #four-card-feature-section .title-second-line {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.3em; }
+  #four-card-feature-section header > .header-hook {
+    width: 510px;
+    margin: auto;
+    text-align: center;
+    color: #a3a5ae; }
+  @media (max-width: 376px) {
+    #four-card-feature-section header {
+      min-width: 375px; }
+    #four-card-feature-section header > .header-hook {
+      width: 375px; }
+    #four-card-feature-section .title-first-line {
+      font-family: "Poppins", sans-serif;
+      font-weight: 200;
+      font-style: normal;
+      font-size: 1.5em; }
+    #four-card-feature-section .title-second-line {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 1.5em; } }
+  #four-card-feature-section .main-content {
+    width: fit-content;
+    margin: auto; }
+  #four-card-feature-section .features-container {
+    display: flex;
+    width: 100%;
+    gap: 35px; }
+  @media (min-width: 376px) {
+    #four-card-feature-section .features-container {
+      height: 535px;
+      margin-left: 20px;
+      margin-right: 20px; } }
+  @media (max-width: 376px) {
+    #four-card-feature-section .features-container {
+      flex-direction: column; } }
+  #four-card-feature-section .features-column-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 535px; }
+  #four-card-feature-section .feature-card {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0px 20px 70px -50px #549ef2; }
+  #four-card-feature-section .feature-card > h1 {
+    font-size: 1.3em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 10px; }
+  #four-card-feature-section .feature-card > p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.9em;
+    color: #a3a5ae; }
+  #four-card-feature-section .feature-card-icon {
+    position: absolute;
+    bottom: 30px;
+    right: 30px; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,46 @@
+.game-menu
+{
+    display:flex;
+
+    width:632px;
+    height:52px;
+    margin-bottom:51px;
+    
+    justify-self:center;
+
+    justify-content:space-between;
+    align-items:center;
+
+    grid-area:H;
+
+    .logo
+    {
+        width:62px;
+        height:62px;
+    }
+}
+
+@media (max-width:$breakpoint-lg)
+{
+    .game-menu
+    {
+        margin-bottom:0px;
+    }
+}
+
+
+@media (max-width:$breakpoint-board)
+{
+   .game-menu
+   {
+       width:335px;
+       height:40px;
+       .logo
+       {
+           width:40px;
+           height:40px;
+       }
+   } 
+}
+
+

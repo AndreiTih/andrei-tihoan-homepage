@@ -1,0 +1,38 @@
+.counter
+{
+
+    width:70px;
+    height:75px;
+    position:relative;
+}
+
+.counter-player1
+{
+    background-image:url("assets/connect_four/images/counter-red-large.svg");
+}
+
+.counter-player2
+{
+    
+    background-image:url("assets/connect_four/images/counter-yellow-large.svg");
+}
+
+
+@media (max-width:$breakpoint-board)
+{
+    .counter
+    {
+        width:41px;
+        height:46px;
+    }
+    .counter-player1
+    {
+        background-image:url("assets/connect_four/images/counter-red-small.svg");
+    }
+    .counter-player2
+    {
+        background-image:url("assets/connect_four/images/counter-yellow-small.svg");
+    }
+}
+
+

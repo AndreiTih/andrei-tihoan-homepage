@@ -1,0 +1,47 @@
+header
+{
+    display:flex;
+
+    margin-top:2.5rem;
+    margin-bottom:5rem;
+    padding-left:$global-padding-side;
+    padding-right:$global-padding-side;
+
+    .company-logo
+    {
+        margin-right:auto;
+    }
+    ul
+    {
+        display:flex;
+        height:100%;
+        align-items:center;
+        gap:45px;
+        padding-left:0px;
+        margin-left:auto;
+        list-style-type:none;
+    }
+}
+
+@media (max-width: $breakpoint-md)
+{
+
+    header
+    {
+        .company-logo
+        {
+            width:80px;
+            height:24px;
+        }
+        ul
+        {
+            gap:24px;
+            li
+            {
+                font-size:0.75rem;
+            }
+        }
+    }
+
+
+}

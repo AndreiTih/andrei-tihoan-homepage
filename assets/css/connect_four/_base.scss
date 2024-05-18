@@ -1,0 +1,46 @@
+*
+{
+    margin:0px;
+    border:0px;
+    line-height:initial;
+}
+
+h1
+{
+    font-size:3.5rem;
+    line-height:71px;
+    @include space-grotesk(700);
+}
+h2
+{
+    font-size:1.5rem;
+    line-height:31px;
+    @include space-grotesk(700);
+}
+h3
+{
+    font-size:1.25rem;
+    line-height:26px;
+    @include space-grotesk(700);
+}
+h4
+{
+    font-size:1rem;
+    line-height:21px;
+    @include space-grotesk(700);
+}
+p
+{
+    font-size:1rem;
+    line-height:21px;
+    @include space-grotesk(500);
+
+}
+button
+{
+    font-size:1rem;
+    @include space-grotesk(700);
+}
+
+
+
