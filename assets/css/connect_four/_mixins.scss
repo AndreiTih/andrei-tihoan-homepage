@@ -12,10 +12,12 @@ $light-purple: hsl(257, 100%, 64%);
 $light-pink: hsl(347, 97%, 70%);
 $light-orange: hsl(41, 100%, 70%);
 
+$black-half-transparent: hsla(243, 87%, 12%, 66%);
 
 /* Common breakpoints */
 
 // $bp-none < 640px
+$breakpoint-xsm:490px;
 $breakpoint-sm:640px;
 $breakpoint-board:685px;
 $breakpoint-md:768px;

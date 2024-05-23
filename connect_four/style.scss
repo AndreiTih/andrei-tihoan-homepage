@@ -14,10 +14,17 @@
     @import 'connect_four/modules/game_menu';
     @import 'connect_four/modules/in_game_button';
     @import 'connect_four/modules/marker';
+    @import 'connect_four/modules/rules_card';
+    @import 'connect_four/modules/rules_card';
+    @import 'connect_four/modules/main_menu';
+    @import 'connect_four/modules/winner_card';
 
     @import 'connect_four/scenes/board';
+    @import 'connect_four/scenes/rules';
+    @import 'connect_four/scenes/main_menu';
     @import 'connect_four/layout/centered';
     @import 'connect_four/layout/game_container';
+
 }
 
 

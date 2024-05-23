@@ -1,9 +1,8 @@
-.scene-board
+.scene-rules
 {
-
     display:none;
     padding-top:1px;
     position:relative;
+    background-color:$dark-purple;
     z-index:$z-layer-furthest;
-    background-color:$light-purple;
 }

@@ -1,0 +1,10 @@
+
+.overlay {
+    width: 100%;
+    height:fit-content;
+    top: 0;
+    left: 0;
+    background: #0000;
+    opacity: 0.5;
+    filter: blur(2px); /* required for opacity to work in IE */
+}

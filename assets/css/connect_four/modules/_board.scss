@@ -4,8 +4,9 @@
     position:relative;
     width:632px;
     height:593px;
+    margin-bottom:100px;
+
     grid-area:B;
-    padding-bottom:110px;
     background-color:$light-purple;
 }
 .board-shadow
@@ -55,7 +56,6 @@
     {
         width:335px;
         height:320px;
-        padding-bottom:135px;
     }
     .board-shadow
     {
@@ -65,8 +65,32 @@
     {
         background-image:url("assets/connect_four/images/board-layer-white-small.svg");
     }
-
-    
 }
+
+//Absolutely positioned against the board container
+//With a large enough height to be guaranteed to overflow
+.winner-message-bar
+{
+    position:absolute;
+    bottom:calc(-100vh + 150px);
+    left:50%;
+    height:100vh;
+    width:100vw;
+    transform:translate(-50%,0px);
+    background-color:$dark-purple;
+    border-radius: 60px;
+}
+
+
+@media (max-width:$breakpoint-board)
+{
+    .winner-message-bar
+    {
+        bottom:calc(-100vh + 125px);
+        border-radius: 60px;
+    }
+}
+
+
 
 

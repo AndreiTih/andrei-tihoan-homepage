@@ -1,0 +1,147 @@
+.menu-container
+{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    gap:30px;
+
+    box-sizing:border-box;
+    padding: 160px 40px 60px 40px;
+    
+
+    width:480px;
+    min-height:435px;
+
+    background-color:$light-purple;
+    border: 3px solid black;
+    border-radius: 40px;
+
+    box-shadow: 0px 10px black;
+}
+
+
+.menu-button
+{
+    display:flex;
+    width:400px;
+    height:72px;
+
+    justify-content:flex-start;
+    align-items:center;
+    box-sizing:border-box;
+    padding-left: 20px;
+
+
+    border: 3px solid black;
+    box-shadow: 0px 10px black;
+    border-radius:20px;
+
+    font-size:1.5rem;
+    line-height:31px;
+    @include space-grotesk(700);
+    background-color:white;
+}
+
+.menu-button:hover
+{
+    border-color: $dark-purple;
+    box-shadow: 0px 10px $dark-purple;
+    cursor:pointer;
+}
+
+//Subclasses
+
+//Main menu
+.main-menu-container::before
+{
+    position:absolute;
+    content:"";
+
+    width:58px;
+    height:61px;
+
+    top:70px;
+    left:50%;
+    transform:translate(-50%,0);
+
+    background-image:url("assets/connect_four/images/logo.svg");
+}
+
+//In game menu
+.in-game-escape-menu::before
+{
+    position:absolute;
+
+    width:fit-content;
+    height:fit-content;
+
+    top:50px;
+    left:50%;
+    transform:translate(-50%,0);
+
+    content:"PAUSE";
+    color:white;
+    font-size:3.5rem;
+    line-height:71px;
+    @include space-grotesk(700);
+
+}
+
+.in-game-escape-menu
+{
+    display:none;
+    //display:flex;
+    position:absolute;
+
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    .menu-button
+    {
+        justify-content:center;
+    }
+    z-index:$z-layer-closest;
+}
+
+//Buttons
+
+.menu-button-play
+{
+    position:relative;
+    background-color:$light-orange;
+}
+
+.menu-button-play::before
+{
+    position:absolute;
+    width:82px;
+    height:46px;
+    content:"";
+    right:17px;
+    background-image:url("assets/connect_four/images/player-vs-player.svg");
+}
+
+.menu-button-quit
+{
+    position:relative;
+    color:white;
+    background-color:$light-pink;
+}
+
+
+
+@media (max-width:$breakpoint-xsm)
+{
+
+    .menu-container
+    {
+        border:initial;
+    }
+    .menu-button
+    {
+        width:335px;
+    }
+}

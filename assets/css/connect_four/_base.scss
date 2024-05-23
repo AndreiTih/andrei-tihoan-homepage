@@ -5,6 +5,17 @@
     line-height:initial;
 }
 
+ol 
+{
+    list-style: none;
+    padding-left:27px;
+    counter-reset: item;
+}
+li 
+{
+    counter-increment: item;
+}
+
 h1
 {
     font-size:3.5rem;
@@ -29,11 +40,13 @@ h4
     line-height:21px;
     @include space-grotesk(700);
 }
-p
+
+p,li
 {
     font-size:1rem;
     line-height:21px;
     @include space-grotesk(500);
+
 
 }
 button

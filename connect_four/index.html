@@ -10,6 +10,11 @@ title: "Connect Four"
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="preload"as="image"href="assets/connect_four/images/turn-background-yellow.svg">
+  <link rel="preload"as="image"href="assets/connect_four/images/icon-check-purple.svg">
+  <link rel="preload"as="image"href="assets/connect_four/images/marker-yellow.svg">
+
+  <script src="assets/connect_four/js/main.js"></script>
 
 
 
@@ -27,15 +32,25 @@ title: "Connect Four"
     <div id="connect_four">
 
         <div class="scene-board">
+            <div class="menu-container in-game-escape-menu">
+                <button class="menu-button">
+                    CONTINUE GAME
+                </button>
+                <button class="menu-button">
+                    RESTART
+                </button>
+                <button class="menu-button menu-button-quit">
+                    QUIT GAME
+                </button>
+            </div>
             <div class="centered-container">
-
 
                 <div class="game-container">
 
                     <div class="game-menu">
-                        <button class="in-game-button">MENU</button>
+                        <button class="in-game-button board-menu-button">MENU</button>
                         <img class="logo" src="assets/connect_four/images/logo.svg" alt="Game's logo">
-                        <button class="in-game-button">RESTART</button>
+                        <button class="in-game-button board-restart-button">RESTART</button>
 
                     </div>
                     <div class="score score-player1">
@@ -48,12 +63,9 @@ title: "Connect Four"
                         <div class="board-shadow"></div>
                         <div class="board-white"></div>
 
-                        <div class="marker marker-player2"></div>
+                        <div class="marker marker-player1"></div>
 
                         <div class="counter-container">
-                            <div class="counter counter-player1" style="grid-area:6/5;"></div>
-                            <div class="counter counter-player2" style="grid-area:6/4;"></div>
-                            <div class="counter counter-player1" style="grid-area:5/4;"></div>
                         </div>
                     </div>
 
@@ -63,16 +75,58 @@ title: "Connect Four"
                         <h1 class="score-value">23</h1>
                     </div>
 
-                    <div class="turn-counter turn-counter-player2">
-                        <p class="player-turn-label">PLAYER 2'S TURN</p>
-                        <h1 class="timer-value">3s</h1>
-
+                    <div class="turn-counter turn-counter-player1">
+                        <p class="player-turn-label">PLAYER 1'S TURN</p>
+                        <h1 class="timer-value">30s</h1>
                     </div>
-
+                    <div class="winner-card">
+                        <p class="winner-card-player-label"> PLAYER 1</p>
+                        <h1 class="winner-card-win-statement">WINS</h1>
+                        <button class="in-game-button winner-card-play-again">PLAY AGAIN</button>
+                    </div>
+                    <div class="winner-message-bar"></div>
                 </div>
+            </div>
+            <!--Adding in that little bar at the bottom Where should I put it? I kind of want it to extend from the bottom of the 
+                screen and go all the way to the
+                I'll just add it to the background and position it absolutely at the bottom. Seems reasonable enough to me.
+            -->
+        </div>
+
+        <div class="scene-rules">
+            <div class="centered-container">
+                <div class="rules-container">
+                    <h1>RULES</h1>
+                    <h3>OBJECTIVE</h3>
+
+                    <p>Be the first player to connect 4 of the same colored discs in a row (either vertically, horizontally, or diagonally).</p>
+                    <h3>HOW TO PLAY</h3>
+                    <ol>
+                        <li>Red goes first in the first game.</li>
+                        <li>Players must alternate turns, and only one disc can be dropped in each turn.</li>
+                        <li>The game ends when there is a 4-in-a-row or a stalemate.</li>
+                        <li>The starter of the previous game goes second on the next game.</li>
+                    </ol>
+                    <button class="back-button"></button>
+                </div>
+
             </div>
         </div>
 
+        <div class="scene-main-menu">
+
+            <div class="centered-container">
+                <div class="menu-container main-menu-container">
+                    <button class="menu-button menu-button-play">
+                        PLAY VS PLAYER
+                    </button>
+                    <button class="menu-button menu-button-rules">
+                        GAME RULES
+                    </button>
+                </div>
+
+            </div>
+        </div>
 
 
     </div>
