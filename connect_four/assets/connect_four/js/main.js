@@ -134,7 +134,7 @@ class MusicManager
     #current_track = new Audio(constants.assets.MUSIC_MENU);
     // This is unnecessary, but saves the need to do a some URL substring processing when extrating the data from #current_track
     #current_track_path = constants.assets.MUSIC_MENU; 
-    #is_muted = true;
+    #is_muted = false;
 
     //Switches to the specified track, unless it's already playing it
     switchTrackNoRepeat(track_path)
