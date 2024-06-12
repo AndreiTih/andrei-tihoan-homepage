@@ -1,0 +1,29 @@
+.volume-button
+{
+    width:50px;
+    height:50px;
+
+    position:absolute;
+    //Top right corner
+    right:50px;
+    top:50px;
+
+    z-index:$z-layer-closest;
+    background-repeat:no-repeat;
+}
+
+.volume-button-on
+{
+    background-image:url("assets/connect_four/images/volume-on.svg");
+}
+
+.volume-button-off
+{
+    background-image:url("assets/connect_four/images/volume-off.svg");
+}
+
+.volume-button:hover
+{
+    background-image:url("assets/connect_four/images/volume-low.svg");
+    cursor:pointer;
+}

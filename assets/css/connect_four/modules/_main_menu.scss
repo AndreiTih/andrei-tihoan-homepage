@@ -136,7 +136,7 @@
 @media (max-width:$breakpoint-xsm)
 {
 
-    .menu-container
+    .main-menu-container
     {
         border:initial;
     }
@@ -144,4 +144,17 @@
     {
         width:335px;
     }
+
+    .in-game-escape-menu
+    {
+        padding: 131px 20px 30px 20px;
+        width:335px;
+        height:437px;
+
+        .menu-button
+        {
+            width:295px;
+        }
+    }
+
 }

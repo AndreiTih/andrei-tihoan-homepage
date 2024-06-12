@@ -25,18 +25,21 @@ title: "Connect Four"
   
 </head>
 <body style="margin:0px; border:0px;">
+    
   <!-- Copy this bit over to the html_body property of _data/html_css_projects.yml -->
   <!-- Change this id to the name of the project. Don't forget to change it in the style.scss as well
   as the intermediary folder name inside assets-->
 
     <div id="connect_four">
 
+        <i class="volume-button volume-button-on"></i>
+
         <div class="scene-board">
             <div class="menu-container in-game-escape-menu">
-                <button class="menu-button">
+                <button class="menu-button menu-button-continue">
                     CONTINUE GAME
                 </button>
-                <button class="menu-button">
+                <button class="menu-button menu-button-restart">
                     RESTART
                 </button>
                 <button class="menu-button menu-button-quit">
@@ -53,13 +56,13 @@ title: "Connect Four"
                         <button class="in-game-button board-restart-button">RESTART</button>
 
                     </div>
-                    <div class="score score-player1">
+                    <div class="score score-player1 slide-in-elliptic-top-fwd">
                         <img class="score-logo" src="assets/connect_four/images/player-one.svg" alt="Smiling face image representing player 1.">
                         <h3 class="player-label">PLAYER 1</h3>
-                        <h1 class="score-value">12</h1>
+                        <h1 class="score-value">0</h1>
                     </div>
 
-                    <div class="board-container">
+                    <div class="board-container slide-in-bck-center">
                         <div class="board-shadow"></div>
                         <div class="board-white"></div>
 
@@ -69,10 +72,10 @@ title: "Connect Four"
                         </div>
                     </div>
 
-                    <div class="score score-player2">
+                    <div class="score score-player2 slide-in-elliptic-top-fwd">
                         <img class="score-logo" src="assets/connect_four/images/player-two.svg" alt="Smiling face image representing player 2.">
                         <h3 class="player-label">PLAYER 2</h3>
-                        <h1 class="score-value">23</h1>
+                        <h1 class="score-value">0</h1>
                     </div>
 
                     <div class="turn-counter turn-counter-player1">

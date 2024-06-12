@@ -8,3 +8,18 @@
     opacity: 0.5;
     filter: blur(2px); /* required for opacity to work in IE */
 }
+
+
+.no-anim
+{
+    animation:none !important;
+}
+
+.display-none
+{
+    display:none !important; // Used by javascript so as to avoid adding an inline-style that would override my CSS.
+}
+.display-flex
+{
+    display:flex !important; // Used by javascript so as to avoid adding an inline-style that would override my CSS.
+}

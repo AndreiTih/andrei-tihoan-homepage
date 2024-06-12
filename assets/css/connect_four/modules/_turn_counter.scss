@@ -12,7 +12,7 @@
     bottom:-25px;
     left: 50%;
     transform: translate(-50%, 0%); // To offset the element by half of its width, effectively centering it. Otherwise it's left side will be at the 50% mark
-    z-index:$z-layer-closest;
+    z-index:$z-layer-close;
 
 
     .player-turn-label
