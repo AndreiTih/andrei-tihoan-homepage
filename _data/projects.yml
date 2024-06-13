@@ -40,7 +40,7 @@
       Phasellus facilisis vel diam a faucibus. Nunc non sodales nisi. Duis libero nisi, bibendum non ornare ut, placerat ac felis.
     url: "http://91.108.112.220:80"
     url_source: "https://github.com/AndreiTih/interactive_comment_section"
-    image: "comment_section_thumbnail.jpg"
+    image: "comment_section_thumbnail.JPG"
     tags:
       - "NodeJs"
       - "SQL"
