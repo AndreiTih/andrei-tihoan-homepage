@@ -1,0 +1,33 @@
+.skill-tag-container
+{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+    width:355px;
+    margin-top:8px;
+    margin-bottom:27px;
+}
+
+.skill-tag
+{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-width:35px;
+    height:21px;
+    width:fit-content;
+
+    box-sizing:border-box;
+    padding-left:6px;
+    padding-right:6px;
+    background-color:$light-grey;
+    border-radius:7px;
+
+    @include open-sans(400);
+    font-size: 0.75rem;
+}
+
+.skill-tag:hover
+{
+    opacity:0.5;
+}

@@ -16,25 +16,18 @@ title: "Connect Four"
 
   <script src="assets/connect_four/js/main.js"></script>
 
-
-
-  <!-- Copy this bit over to the html_head property of _data/html_css_projects.yml -->
-  <!-- Here is where you import your font stuff -->
   <link rel="stylesheet" href="style.css">
 
   
 </head>
 <body style="margin:0px; border:0px;">
     
-  <!-- Copy this bit over to the html_body property of _data/html_css_projects.yml -->
-  <!-- Change this id to the name of the project. Don't forget to change it in the style.scss as well
-  as the intermediary folder name inside assets-->
-
     <div id="connect_four">
 
         <i class="volume-button volume-button-on"></i>
 
         <div class="scene-board">
+            <div class="darken-overlay"></div>
             <div class="menu-container in-game-escape-menu">
                 <button class="menu-button menu-button-continue">
                     CONTINUE GAME
@@ -90,10 +83,6 @@ title: "Connect Four"
                     <div class="winner-message-bar"></div>
                 </div>
             </div>
-            <!--Adding in that little bar at the bottom Where should I put it? I kind of want it to extend from the bottom of the 
-                screen and go all the way to the
-                I'll just add it to the background and position it absolutely at the bottom. Seems reasonable enough to me.
-            -->
         </div>
 
         <div class="scene-rules">

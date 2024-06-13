@@ -1,11 +1,51 @@
 ---
-layout: default
+layout: projects
 title: "Andrei Tihoan: Projects"
 header_title: Projects
 include_header: projects_header.html
-nav_item: projects
+nav_item: projects_wip
 ---
 
-{% for project in site.data.projects %}
-  {% include project-outline.html project=project %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="preload"as="image"href={{"/assets/img/icons/link-arrow-hover.svg"| base_url }}>
+
+<script>
+    // Play videos on hover
+document.addEventListener('DOMContentLoaded', function() 
+    {
+        const videos = document.querySelectorAll('video');
+
+        videos.forEach(video => {
+            video.pause();
+            video.currentTime = 0;
+
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
+
+            video.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+    });
+</script>
+
+<link rel="stylesheet" href="style.css">
+
+{% for project_group in site.data.projects %}
+  <h1 class ="border-bottom py2" style="width:fit-content;margin-top:0;">{{project_group.heading}}</h1>
+    {% for project in project_group.projects %}
+        {% if forloop.last == false %}
+            {% include project-outline.html project=project %}
+        {% else %}
+            {% include project-outline.html project=project exclude_divider=true%}
+        {% endif %}
+    {% endfor %}
 {% endfor %}
+
+<video muted autoplay="" preload="auto" loop = "" playsinline="">
+    <source type="video/mp4" src={{"/assets/videos/connect_4.mp4"| relative_url}}>
+</video>

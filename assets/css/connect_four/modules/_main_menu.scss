@@ -42,6 +42,8 @@
     line-height:31px;
     @include space-grotesk(700);
     background-color:white;
+
+    z-index:$z-layer-closest;
 }
 
 .menu-button:hover
