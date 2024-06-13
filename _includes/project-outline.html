@@ -2,13 +2,27 @@
 <div class="mxn2 clearfix mb2 py3{% unless include.exclude_divider %} border-bottom border-light-gray circle-line {% endunless %}">
   <div class="col sm-col-4 px2 mb2">
     <a href="{{ include.project.url }}" target="_blank">
-      {% capture image_path %}projects/{{ include.project.image }}{% endcapture %}
-      {% include image.html path=image_path alt=include.project.name %}
+      {%if include.project.image%}
+          {% capture image_path %}projects/{{ include.project.image }}{% endcapture %}
+          {% include image.html path=image_path alt=include.project.name class="hover-border" %}
+      {% elsif include.project.video %}
+          <video muted autoplay="" preload="auto" loop = "" playsinline="" class="hover-border" style="max-width:100%;">
+              <source type="video/mp4" src="/assets/video/{{include.project.video}}">
+          </video>
+      {% endif %}
+
     </a>
   </div>
   <div class="col sm-col-8 px2">
-    <a href="{{ include.project.url }}" target="_blank" name="{{ include.project.name | downcase | replace:' ','-' | remove:',' }}"><{{ project_title_element }} class="mt0 mb0">{{ include.project.name }}</{{ project_title_element }}></a>
-    <a href="{{ include.project.url }}" target="_blank" class="block h6 mb2">{{ include.project.url }}</a>
-    <p class="left-align">{{ include.project.description }}</p>
+      <a href="{{ include.project.url }}" target="_blank" name="{{ include.project.name | downcase | replace:' ','-' | remove:',' }}"><{{ project_title_element }} class="mt0 mb0 {%if include.project.url %} link-arrow-small{% endif %}">{{ include.project.name }}</{{ project_title_element }}></a>
+    <!--Here is where you put all the tags for now let's just make a single tag-->
+
+    <div class="skill-tag-container">
+        {% for skill_name in include.project.tags %}
+            <div class="skill-tag">{{skill_name}}</div>
+        {% endfor %}
+    </div>
+    <p class="left-align project-p" style="font-size:" >{{ include.project.description }}</p>
+    <a href="{{ include.project.url_source }}" target="_blank" class="block h6 mb2">{{ include.project.url_source }}</a>
   </div>
 </div>

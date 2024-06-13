@@ -23,3 +23,14 @@
 {
     display:flex !important; // Used by javascript so as to avoid adding an inline-style that would override my CSS.
 }
+
+.darken-overlay
+{
+    display:none;
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:rgba(0, 0, 0, 0.3);
+
+    z-index:$z-layer-very-close;
+}

@@ -84,8 +84,31 @@ $small-row-height:34px;
     transform:translate(-50%,0px);
     background-color:$dark-purple;
     border-radius: 60px;
+
 }
 
+.winner-message-bar-player1
+{
+    background-color:$light-pink;
+    animation: from_purple_to_light_pink 2s;
+}
+
+.winner-message-bar-player2
+{
+    background-color:$light-orange;
+    animation: from_purple_to_light_orange 2s;
+}
+
+@keyframes from_purple_to_light_pink
+{
+  0%   {background-color:$dark-purple}
+  100% {background-color:$light-pink}
+}
+@keyframes from_purple_to_light_orange
+{
+  0%   {background-color:$dark-purple}
+  100% {background-color:$light-orange}
+}
 
 @media (max-width:$breakpoint-board)
 {

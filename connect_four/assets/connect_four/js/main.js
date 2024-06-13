@@ -63,12 +63,15 @@ const constants =
             TURN_COUNTER_PLAYER_LABEL: ".player-turn-label",
             TURN_COUNTER_TIMER_VALUE: ".timer-value",
             WINNER_CARD: ".winner-card",
+            WINNER_BAR: ".winner-message-bar",
+            WINNER_TEXT_LABEL: ".winner-card-player-label",
             SCORE_VAL_PLAYER_1: ".score-player1 .score-value",
             SCORE_VAL_PLAYER_2: ".score-player2 .score-value",
             SCORE_PLAYER_1: ".score-player1",
             SCORE_PLAYER_2: ".score-player2",
             PLAY_AGAIN_BUTTON: ".winner-card .winner-card-play-again",
             ESCAPE_MENU: ".in-game-escape-menu",
+            DARKEN_OVERLAY: ".darken-overlay",
             ESCAPE_MENU_QUIT_GAME: ".in-game-escape-menu .menu-button-quit",
             ESCAPE_MENU_CONTINUE_GAME: ".in-game-escape-menu .menu-button-continue",
             ESCAPE_MENU_RESTART: ".in-game-escape-menu .menu-button-restart",
@@ -93,7 +96,12 @@ const constants =
         {
             MUTED: "volume-button-off",
             UNMUTED: "volume-button-on",
-        }
+        },
+        winner_bar_class:
+        {
+            PLAYER1: "winner-message-bar-player1",
+            PLAYER2: "winner-message-bar-player2",
+        },
     };
 
 
@@ -240,11 +248,18 @@ class BoardStateManager
         this.#board_state = new Int8Array(this.#board_state_buffer);
     }
 
-    resetGameState()
+    resetGameState(last_winner)
     {
         this.resetBoard();
-        this.#current_player = constants.player.PLAYER1;
         this.resetTimer();
+
+        if(last_winner == null)
+            this.#current_player = constants.player.PLAYER1;
+        else
+        {
+            this.#current_player = last_winner == constants.player.PLAYER1 ? 
+                constants.player.PLAYER2 : constants.player.PLAYER1;
+        }
     }
 
     setPlayer(player_enum)
@@ -473,12 +488,15 @@ class Game
 
     player1_wins = 0;
     player2_wins = 0;
+    //Player enum holding the last winner.
+    last_winner = null;
 
     //DOM elements references
     marker_element = null;
     counter_container = null;
     turn_counter_element = null;
     winner_card_element = null;
+    winner_card_text_element = null;
     timer_value_element = null;
     score_val_player_1_element = null;
     score_val_player_2_element = null;
@@ -487,6 +505,8 @@ class Game
     bounce_audio_element = null;
     escape_menu_element = null;
     mute_button_element = null;
+    winner_bar_element = null;
+    darken_overlay_element = null;
 
     constructor()
     {
@@ -509,6 +529,9 @@ class Game
             this.score_player_2_element = document.querySelector(constants.game_selector.SCORE_PLAYER_2);
             this.escape_menu_element = document.querySelector(constants.game_selector.ESCAPE_MENU);
             this.mute_button_element = document.querySelector(constants.game_selector.MUTE_BUTTON);
+            this.winner_bar_element = document.querySelector(constants.game_selector.WINNER_BAR);
+            this.darken_overlay_element = document.querySelector(constants.game_selector.DARKEN_OVERLAY);
+            this.winner_card_text_element = document.querySelector(constants.game_selector.WINNER_TEXT_LABEL);
         }
         else
         {
@@ -526,6 +549,9 @@ class Game
                     this.score_player_2_element = document.querySelector(constants.game_selector.SCORE_PLAYER_2);
                     this.escape_menu_element = document.querySelector(constants.game_selector.ESCAPE_MENU);
                     this.mute_button_element = document.querySelector(constants.game_selector.MUTE_BUTTON);
+                    this.winner_bar_element = document.querySelector(constants.game_selector.WINNER_BAR);
+                    this.darken_overlay_element = document.querySelector(constants.game_selector.DARKEN_OVERLAY);
+                    this.winner_card_text_element = document.querySelector(constants.game_selector.WINNER_TEXT_LABEL);
                 }.bind(this));
         }
         Game.s_instance = this;
@@ -566,6 +592,7 @@ class Game
         this.escape_menu_element.style.display = 'none';
         this.marker_element.classList.add("display-flex");
         this.marker_element.classList.remove("display-none");
+        this.darken_overlay_element.style.display = 'none';
 
         clearInterval(this.timerIntervalID);
         this.timerIntervalID = setInterval(Game.updateClock, 1000);
@@ -577,6 +604,7 @@ class Game
         this.marker_element.classList.add("display-none");
         this.marker_element.classList.remove("display-flex");
         this.escape_menu_element.style.display = 'flex';
+        this.darken_overlay_element.style.display = 'block';
 
         clearInterval(this.timerIntervalID);
     }
@@ -600,6 +628,8 @@ class Game
     //Make it accept this PlayerWin and make it do everything.
     game_over(playerWin)
     {
+        this.last_winner = playerWin.player_enum;
+
         clearInterval(this.timerIntervalID);
         this.ui_state = constants.ui_state.GAME_OVER;
 
@@ -642,19 +672,19 @@ class Game
         //if(game_result == constants.game_over_enum.DRAW)
         //    console.log("DRAW");
 
-        //Update Winner card UI
-        this.winner_card_element.style.display='flex';
+        //Update Winner card UI and Winner Bar UI
+        this.winner_card_element.style.display = "flex";
+        this.winner_card_text_element.innerHTML = playerWin.player_enum == constants.player.PLAYER1 ? "PLAYER 1" : "PLAYER 2";
         this.marker_element.classList.add('display-none');
+        this.updateWinnerBarLook(playerWin.player_enum);
 
         this.timer_value_element.innerText = `${constants.game_constraints.TURN_LENGTH}s`;
-
 
         // Update the score UI
         if(playerWin.player_enum == constants.player.PLAYER1)
             this.score_val_player_1_element.innerText = this.player1_wins;
         else
             this.score_val_player_2_element.innerText = this.player2_wins;
-
     }
 
 
@@ -693,7 +723,7 @@ class Game
     initializeGame()
     {
         console.log("initializing game")
-        this.board_state_manager.resetGameState(); // Game logic reset
+        this.board_state_manager.resetGameState(this.last_winner); // Game logic reset
         this.resetGameUI(); // UI state reset
 
         clearInterval(this.timerIntervalID);
@@ -711,17 +741,19 @@ class Game
     resetGameUI()
     {
         // Reset every UI related state to the start. What's the point of this if it doesn't reflect the game state? Should it not just be called right after resetting the board?
-        this.ui_state = constants.ui_state.IN_GAME; 
+        this.ui_state = constants.ui_state.IN_GAME;
 
         this.updateBoardUI();
-        this.updateMarkerClass(constants.player.PLAYER1);
-        this.updateTurnCounterLook(constants.player.PLAYER1);
-        this.updateScoreLook(constants.player.PLAYER1);
+        this.updateMarkerClass(this.board_state_manager.getCurrentPlayer());
+        this.updateTurnCounterLook(this.board_state_manager.getCurrentPlayer());
+        this.updateScoreLook(this.board_state_manager.getCurrentPlayer());
         this.updateClockLook();
+        this.resetWinnerBarLook();
 
         this.marker_element.classList.remove('display-none');
         this.winner_card_element.style.display = 'none';
         this.escape_menu_element.style.display = 'none';
+        this.darken_overlay_element.style.display = 'none';
     }
 
     
@@ -855,6 +887,25 @@ class Game
             this.turn_counter_element.classList.add("turn-counter-player2");
             player_turn_label.textContent = constants.player_turn_messages.PLAYER_2_TURN;
         }
+    }
+
+
+    updateWinnerBarLook(playerEnum)
+    {
+        if(playerEnum == constants.player.PLAYER1)
+        {
+            this.winner_bar_element.classList.add(constants.winner_bar_class.PLAYER1);
+        }
+        else
+        {
+            this.winner_bar_element.classList.add(constants.winner_bar_class.PLAYER2);
+        }
+    }
+    resetWinnerBarLook()
+    {
+
+            this.winner_bar_element.classList.remove(constants.winner_bar_class.PLAYER1);
+            this.winner_bar_element.classList.remove(constants.winner_bar_class.PLAYER2);
     }
 
     updateMarkerPosition(column_index)

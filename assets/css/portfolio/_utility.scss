@@ -1,0 +1,33 @@
+
+.hover-border
+{
+    transition: box-shadow 0.75s ,transform 0.75s, border-radius 0.75s;
+}
+.hover-border:hover
+{
+    box-sizing:border-box;
+    box-shadow: 0px 10px 50px hsla(243, 87%, 12%, 20%);
+    transform: scale(1.05);
+    border-radius:20px;
+}
+
+.link-arrow-small
+{
+    position:relative;
+    width:fit-content;
+}
+.link-arrow-small::after
+{
+    position:absolute;
+    content:"";
+    right: -20px;
+    
+    width:0.8rem;
+    height:0.8rem;
+    background-image: url("#{$base-url}/assets/img/icons/link-arrow.svg");
+}
+
+.link-arrow-small:hover::after
+{
+    background-image: url("#{$base-url}/assets/img/icons/link-arrow-hover.svg");
+}
