@@ -4,7 +4,11 @@
     <a href="{{ include.project.url }}" target="_blank">
       {%if include.project.image%}
           {% capture image_path %}projects/{{ include.project.image }}{% endcapture %}
-          {% include image.html path=image_path alt=include.project.name class="hover-border" %}
+          {% if include.project.no_hover %}
+              {% include image.html path=image_path alt=include.project.name %}
+          {% else %}
+              {% include image.html path=image_path alt=include.project.name class="hover-border" %}
+          {% endif %}
       {% elsif include.project.video %}
           <video muted autoplay="" preload="auto" loop = "" playsinline="" class="hover-border" style="max-width:100%;">
               <source type="video/mp4" src="/assets/video/{{include.project.video}}">
@@ -22,7 +26,12 @@
             <div class="skill-tag">{{skill_name}}</div>
         {% endfor %}
     </div>
-    <p class="left-align project-p" style="font-size:" >{{ include.project.description }}</p>
+    {%if include.project.description%}
+        <p class="left-align project-p" >{{ include.project.description }}</p>
+    {%endif%}
+    {%if include.project.description_html%}
+    {{ include.project.description_html }}
+    {% endif %}
     <a href="{{ include.project.url_source }}" target="_blank" class="block h6 mb2">{{ include.project.url_source }}</a>
   </div>
 </div>

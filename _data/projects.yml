@@ -3,11 +3,18 @@
   projects:
   - name: "HTML & CSS"
     date: "2024"
-    description: |
-      <a href="https://www.andreitihoan.com/single_page_html_projects">9 implementations</a> of modern production-ready designs using vanilla HTML & SCSS.
+    description_html: |
+      <p class="left-align project-p" >
+        <a href="https://www.andreitihoan.com/single_page_html_projects">9 implementations</a> 
+        of modern production-ready designs using vanilla HTML & SCSS.
+      </p>
+
       <br class="mb2">
 
-      The designs were sourced from <a href="https://www.frontendmentor.io">frontendmentors.io</a>.
+      <p class="left-align project-p" >
+        The designs were sourced from <a href="https://www.frontendmentor.io">frontendmentors.io</a>.
+      </p>
+
     url: "https://www.andreitihoan.com/single_page_html_projects"
     url_source: "https://www.andreitihoan.com/single_page_html_projects"
     video: "html_css.mp4"
@@ -15,11 +22,12 @@
       - "HTML"
       - "CSS"
       - "SCSS"
+
   - name: "Connect Four Game"
     date: "2023"
     description: |
-      A slightly more complex browser-side project. I made this to practice more intricate browser-side JavaScript.
-      <br class="mb2">
+      A slightly more complex browser-side project.
+      I made this to practice more intricate browser-side JavaScript.
       The design was sourced from <a href="https://www.frontendmentor.io">frontendmentors.io</a>.
     url: "https://www.andreitihoan.com/connect_four"
     url_source: "https://github.com/AndreiTih/andrei-tihoan-homepage/tree/gh-pages/connect_four"
@@ -36,14 +44,22 @@
   - name: "Interactive Comment Section"
     date: "2024"
     description: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus facilisis vel diam a faucibus. Nunc non sodales nisi. Duis libero nisi, bibendum non ornare ut, placerat ac felis.
+      All comments are stored in a MySQL database.
+      <br>
+      Upon request, the server renders the HTML and serves it to the browser.
+      <br>
+      Hosted on a VPS from <a href=https://www.hostinger.co.uk>hostinger.co.uk</a>.
+      <br>
+
+      Deployed using <a href="https://pm2.keymetrics.io/">pm2</a>
     url: "http://91.108.112.220:80"
     url_source: "https://github.com/AndreiTih/interactive_comment_section"
     image: "comment_section_thumbnail.JPG"
     tags:
       - "NodeJs"
       - "SQL"
+      - "Fastify"
+      - "DevOps"
       - "JavaScript"
       - "HTML"
       - "CSS"
@@ -51,10 +67,20 @@
 
   - name: "SAAS project (W.I.P)"
     date: "2024"
-    description: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus facilisis vel diam a faucibus. Nunc non sodales nisi. Duis libero nisi, bibendum non ornare ut, placerat ac felis.
-    image: "HTML_CSS_placeholder.png"
+    description_html: |
+      <p class="left-align project-p">
+        A portfolio page builder: <a href="https://www.andreitihoan.com/projects">portfolio.fit</a>.
+      </p>
+      <p class="left-align project-p">
+        Built using a modern frontend stack.
+        
+        <br>
+        Made for professionals that want to display their
+        <br>
+        work online. The user chooses a template, and their portfolio
+        is hosted under a personal http link.
+      </p>
+    image: "wip_1.png"
     tags:
       - "React.js"
       - "TypeScript"
@@ -63,15 +89,23 @@
       - "HTML"
       - "CSS"
       - "SCSS"
+    no_hover: ""
+
 
 
 - heading: "Systems programming"
   projects:
   - name: "Bootable Hello World"
     date: "2021"
-    description: |
-      A project that compiles to a .iso image with the code necessary to boot off the BIOS and print a simple 
-      string on the screen. A simple but exciting way to learn more about how computers work.
+    description_html: |
+      <p class="left-align project-p">
+        A project that compiles to a .iso image with the machine code necessary to boot off the BIOS and print a simple 
+        string on the screen. A simple but exciting way to learn more about how computers work.
+      </p>
+      <p class="left-align project-p">
+        Browse my <a href="https://www.andreitihoan.com/writing/2023/12/02/hello-boot">article</a> discussing this project.
+      </p>
+
     url: "https://github.com/AndreiTih/bios_bootable"
     url_source: "https://github.com/AndreiTih/bios_bootable"
     image: "bios.jpg"
@@ -79,12 +113,15 @@
       - "C++"
       - "C"
       - "x86 asm"
+    no_hover: ""
   - name: "Agent Jump"
     date: "2023"
     description: |
-      A game written in C++ that is a clone of the well known <a href = https://play.google.com/store/apps/details?id=com.lima.doodlejump&hl=en&gl=US>doodle jump</a> mobile game. It uses the Sumo Digital Academy's
-      playbuffer framework, which does not use any 3D acceleration. Most of the methods write to an an array buffer containing
-      pixels. This array buffer then gets displayed to the window 60 times a second using a winAPI function called StretchDIBits.
+      A game written in C++ that is a clone of the well known <a href = https://play.google.com/store/apps/details?id=com.lima.doodlejump&hl=en&gl=US>doodle jump</a> mobile game.
+      <br>
+      Written using Sumo Digital Academy's playbuffer 
+      framework. A good exercise in memory management and
+      code optimization.
     url: "https://github.com/AndreiTih/AgentJump"
     url_source: "https://github.com/AndreiTih/AgentJump"
     video: "agent_jump.mp4"
