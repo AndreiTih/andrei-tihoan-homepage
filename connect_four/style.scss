@@ -7,6 +7,7 @@
     @import 'connect_four/base';
     @import 'connect_four/utility';
 
+    @import 'connect_four/modules/loading';
     @import 'connect_four/modules/board';
     @import 'connect_four/modules/counter';
     @import 'connect_four/modules/score';
@@ -20,6 +21,7 @@
     @import 'connect_four/modules/winner_card';
     @import 'connect_four/modules/volume_button';
 
+    @import 'connect_four/scenes/loading';
     @import 'connect_four/scenes/board';
     @import 'connect_four/scenes/rules';
     @import 'connect_four/scenes/main_menu';

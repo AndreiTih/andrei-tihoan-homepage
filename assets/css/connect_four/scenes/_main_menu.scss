@@ -1,6 +1,6 @@
 .scene-main-menu
 {
-    display:block;
+    display:none;// when on it's block
     padding-top:1px;
     position:relative;
     background-color:$dark-purple;
@@ -10,7 +10,6 @@
 
 @media (max-width:$breakpoint-xsm)
 {
-    
     .scene-main-menu
     {
         background-color:$light-purple;

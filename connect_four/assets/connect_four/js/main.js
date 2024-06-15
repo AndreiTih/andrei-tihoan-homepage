@@ -43,6 +43,7 @@ const constants =
             MAIN_MENU : ".scene-main-menu",
             RULES : ".scene-rules",
             GAME : ".scene-board",
+            LOADING : ".scene-loading",
         },
         main_menu_selector:
         {
@@ -56,6 +57,7 @@ const constants =
         game_selector:
         {
             MENU_BUTTON: ".game-menu .board-menu-button",
+            PROGRESS_BAR: ".progress-bar",
             RESTART_BUTTON: ".game-menu .board-restart-button",
             COUNTER_CONTAINER: ".counter-container",
             MARKER: ".marker",
@@ -115,13 +117,13 @@ class SceneManager
             || document.readyState === "interactive") 
         {
             // DOM's already loaded
-            this.#current_scene = document.querySelector(constants.scene_selector.MAIN_MENU);
+            this.#current_scene = document.querySelector(constants.scene_selector.LOADING);
         }
         else
         {
             document.addEventListener('DOMContentLoaded', function() 
                 {
-                    this.#current_scene = document.querySelector(constants.scene_selector.MAIN_MENU);
+                    this.#current_scene = document.querySelector(constants.scene_selector.LOADING);
                 }.bind(this));
         }
     }
@@ -920,8 +922,85 @@ class Game
     }
 }
 
+
+var image_assets = ["assets/connect_four/images/cpu.svg",
+                    "assets/connect_four/images/counter-red-small.svg",
+                    "assets/connect_four/images/counter-yellow-small.svg",
+                    "assets/connect_four/images/counter-red-large.svg",
+                    "assets/connect_four/images/counter-yellow-large.svg",
+                    "assets/connect_four/images/board-layer-black-small.svg",
+                    "assets/connect_four/images/board-layer-white-small.svg",
+                    "assets/connect_four/images/board-layer-black-large.svg",
+                    "assets/connect_four/images/board-layer-white-large.svg",
+                    "assets/connect_four/images/volume-on.svg",
+                    "assets/connect_four/images/volume-off.svg",
+                    "assets/connect_four/images/volume-low.svg",
+                    "assets/connect_four/images/marker-red.svg",
+                    "assets/connect_four/images/marker-yellow.svg",
+                    "assets/connect_four/images/turn-background-red.svg",
+                    "assets/connect_four/images/turn-background-yellow.svg",
+                    "assets/connect_four/images/icon-check.svg",
+                    "assets/connect_four/images/icon-check-purple.svg",
+                    "assets/connect_four/images/icon-check-purple.svg",
+                    "assets/connect_four/images/player-vs-player.svg",
+]
+var audio_assets = [ "assets/connect_four/audio/drop_bounce.mp3",
+                     "assets/connect_four/audio/bubble_sound.mp3",
+                     "assets/connect_four/audio/click_cool.wav",
+                     "assets/connect_four/audio/main_menu.mp3",
+                     "assets/connect_four/audio/game.mp3",
+]
+//TODO: fill in the image_assets and audio_assets, then make a little loading screen.
+// The game should start in the loding stage, then this loadAllAssets function should
+// be the one to switch from the loading scene to the main menu.
+// Could pretty easily make a progress bar of some kind as well.
+
+function loadAllAssets()
+{
+    const progress_bar = document.querySelector(constants.game_selector.PROGRESS_BAR);
+    let asset_loaded_count = 0;
+    const total_asset_count = audio_assets.length + image_assets.length;
+    console.log(total_asset_count);
+
+    const asset_array = []; // So they don't get garbage collected
+    function onAssetLoad(){
+        asset_loaded_count++;
+        console.log(`Loaded: something; total nr loaded assets: ${asset_loaded_count}`);
+
+        //Update the progress_bar
+        let progress_percent = Math.floor((asset_loaded_count / total_asset_count) * 100);
+        progress_bar.style.width= `${progress_percent}%`
+        console.log("progress perc:" + progress_percent);
+        console.log("just the division" + (asset_loaded_count/total_asset_count));
+
+        if(asset_loaded_count == total_asset_count)
+        {
+            Game.the().switchScene(constants.scene_selector.MAIN_MENU);
+        }
+    } 
+    image_assets.forEach(function(path)
+        {
+            const image = new Image();
+            asset_array.push(image);
+            image.onload = onAssetLoad;
+            image.src = path;
+        });
+    audio_assets.forEach(function(path)
+        {
+            const track = new Audio();
+            asset_array.push(track);
+            track.addEventListener("canplaythrough",onAssetLoad);
+            track.src = path;
+        });
+}
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() 
     {
+
+        loadAllAssets();
         // Attach Button handlers
         const main_menu_game_rules_button = document.querySelector(constants.main_menu_selector.RULES_BUTTON);
         main_menu_game_rules_button.addEventListener('click',function(event)
@@ -942,7 +1021,6 @@ document.addEventListener('DOMContentLoaded', function()
                 Game.the().switchScene(constants.scene_selector.GAME);
                 event.stopPropagation();
             });
-
 
 
         const game_menu_button = document.querySelector(constants.game_selector.MENU_BUTTON);
@@ -1061,4 +1139,8 @@ function getCounterContainerColumnIndexFromXOffset(xOffset)
     const column_index = parseInt(Math.max(xOffset - padding_left,0) / (column_size + column_gap) + 1);
     return column_index - 1;
 }
+
+
+
+
 
