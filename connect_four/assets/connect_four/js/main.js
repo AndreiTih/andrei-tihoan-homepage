@@ -996,6 +996,7 @@ function loadAllAssets()
                 console.log(error);
             }
             track.src = path;
+            track.load();
         });
 }
 
