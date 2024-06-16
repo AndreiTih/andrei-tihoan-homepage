@@ -17,11 +17,11 @@
 
 .display-none
 {
-    display:none !important; // Used by javascript so as to avoid adding an inline-style that would override my CSS.
+    display:none; // Used by javascript so as to avoid adding an inline-style that would override my CSS.
 }
 .display-flex
 {
-    display:flex !important; // Used by javascript so as to avoid adding an inline-style that would override my CSS.
+    display:flex; // Used by javascript so as to avoid adding an inline-style that would override my CSS.
 }
 
 .darken-overlay
