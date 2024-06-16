@@ -966,7 +966,6 @@ function loadAllAssets()
     function onAssetLoad(){
         asset_loaded_count++;
         console.log(`Loaded: something; total nr loaded assets: ${asset_loaded_count}`);
-
         //Update the progress_bar
         let progress_percent = Math.floor((asset_loaded_count / total_asset_count) * 100);
         progress_bar.style.width= `${progress_percent}%`
@@ -983,6 +982,9 @@ function loadAllAssets()
             const image = new Image();
             asset_array.push(image);
             image.onload = onAssetLoad;
+            image.onerror = function(error){
+                console.log(error);
+            }
             image.src = path;
         });
     audio_assets.forEach(function(path)
@@ -990,6 +992,9 @@ function loadAllAssets()
             const track = new Audio();
             asset_array.push(track);
             track.addEventListener("canplaythrough",onAssetLoad);
+            track.onerror = function(error){
+                console.log(error);
+            }
             track.src = path;
         });
 }
