@@ -18,6 +18,17 @@
 {
     background-image:url("assets/connect_four/images/volume-off.svg");
 }
+
+@media(hover:hover)
+{
+    .volume-button:hover
+    {
+        background-image:url("assets/connect_four/images/volume-low.svg");
+        cursor:pointer;
+    }
+
+}
+
 @media(max-width:$breakpoint-xsm)
 {
     .volume-button
@@ -27,11 +38,19 @@
     }
 }
 
-@media(hover:hover)
+@media (max-width:$breakpoint-xsm) and (hover:none)
 {
-    .volume-button:hover
+    // Since on mobile devices there's no hover rule, the background change looks a bit jarring without this translation
+    .volume-button-off
     {
-        background-image:url("assets/connect_four/images/volume-low.svg");
-        cursor:pointer;
+        transform:translate(-7px,0px);
+    }
+
+    .volume-button-off
+    {
+        width:33px;
+        height:33px;
     }
 }
+
+
