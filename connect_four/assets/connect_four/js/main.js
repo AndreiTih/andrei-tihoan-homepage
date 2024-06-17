@@ -903,7 +903,8 @@ class Game
                 this.board_state_manager.resetTimer();
 
                 this.syncUiWithGameLogicState();
-                this.ui_state = constants.ui_state.IN_GAME;
+                if(this.ui_state == constants.ui_state.BLOCKING_ANIMATION) // Because you can switch the state to IN_MENU while the counter is dropping
+                    this.ui_state = constants.ui_state.IN_GAME;
                 this.checkAndHandleWinCondition(row_index,col_index,player_enum);
             }.bind(this));
 
