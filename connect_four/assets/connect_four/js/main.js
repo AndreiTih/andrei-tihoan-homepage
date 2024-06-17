@@ -106,6 +106,82 @@ const constants =
         },
     };
 
+var image_assets = ["assets/connect_four/images/cpu.svg",
+                    "assets/connect_four/images/counter-red-small.svg",
+                    "assets/connect_four/images/counter-yellow-small.svg",
+                    "assets/connect_four/images/counter-red-large.svg",
+                    "assets/connect_four/images/counter-yellow-large.svg",
+                    "assets/connect_four/images/board-layer-black-small.svg",
+                    "assets/connect_four/images/board-layer-white-small.svg",
+                    "assets/connect_four/images/board-layer-black-large.svg",
+                    "assets/connect_four/images/board-layer-white-large.svg",
+                    "assets/connect_four/images/volume-on.svg",
+                    "assets/connect_four/images/volume-off.svg",
+                    "assets/connect_four/images/volume-low.svg",
+                    "assets/connect_four/images/marker-red.svg",
+                    "assets/connect_four/images/marker-yellow.svg",
+                    "assets/connect_four/images/turn-background-red.svg",
+                    "assets/connect_four/images/turn-background-yellow.svg",
+                    "assets/connect_four/images/icon-check.svg",
+                    "assets/connect_four/images/icon-check-purple.svg",
+                    "assets/connect_four/images/icon-check-purple.svg",
+                    "assets/connect_four/images/player-vs-player.svg",
+]
+var music_assets = [ "assets/connect_four/audio/main_menu.mp3",
+                     "assets/connect_four/audio/game.mp3",
+]
+
+var audio_assets = [ "assets/connect_four/audio/bubble_sound.mp3",
+                     "assets/connect_four/audio/click_cool.wav",
+                     "assets/connect_four/audio/drop_bounce.mp3",
+]
+
+//TODO: Refactor these into the Game class
+var asset_loaded_count = 0;
+const total_asset_count = audio_assets.length + image_assets.length + music_assets.length;
+
+function onAssetLoad(){
+    asset_loaded_count++;
+    //console.log(`Loaded: something; total nr loaded assets: ${asset_loaded_count}`);
+    //Update the progress_bar
+    let progress_percent = Math.floor((asset_loaded_count / total_asset_count) * 100);
+    Game.the().progress_bar_element.style.width= `${progress_percent}%`
+    //console.log("progress perc:" + progress_percent);
+    //console.log("just the division" + (asset_loaded_count/total_asset_count));
+
+    if(asset_loaded_count == total_asset_count)
+    {
+        Game.the().switchScene(constants.scene_selector.MAIN_MENU);
+    }
+} 
+
+function loadAllAssets()
+{
+    const asset_array = []; // So they don't get garbage collected
+    image_assets.forEach(function(path)
+        {
+            const image = new Image();
+            asset_array.push(image);
+            image.onload = onAssetLoad;
+            image.onerror = function(error){
+                console.log(error);
+            }
+            image.src = path;
+        });
+
+    music_assets.forEach(function(path)
+        {
+            const track = new Audio();
+            asset_array.push(track);
+            track.addEventListener("canplaythrough",onAssetLoad);
+            track.onerror = function(error){
+                console.log(error);
+            }
+            track.src = path;
+            track.load();
+        });
+}
+
 
 class SceneManager
 {
@@ -145,7 +221,44 @@ class MusicManager
     // This is unnecessary, but saves the need to do a some URL substring processing when extrating the data from #current_track
     #current_track_path = constants.assets.MUSIC_MENU; 
     #is_muted = false;
+    #audio_context = null;
 
+    // A map from sound file path to a decoded audio buffer. used by the play method.
+    #decoded_audio_buffers = {};
+
+    async loadAudio()
+    {
+        // Fetch the audio file
+        // Iterate through all audio files from audio_assets
+        // And fetch all of them, and keep them in a map that goes from the path of the file to the decoded audio buffer.
+
+        audio_assets.forEach(async (audio_path) => {
+            const response = await fetch(audio_path);
+            const arrayBuffer = await response.arrayBuffer();
+            // Decode the audio data
+            const decoded_buffer = await this.#audio_context.decodeAudioData(arrayBuffer);
+            // Place it into a map
+            this.#decoded_audio_buffers[audio_path] = decoded_buffer;
+            console.log(this.#decoded_audio_buffers);
+            onAssetLoad();
+        });
+    };
+
+    play(audio_path)
+    {
+        const source = this.#audio_context.createBufferSource();
+        source.buffer = this.#decoded_audio_buffers[audio_path];
+        // connect the source to the audio context's destination (the speakers)
+        source.connect(this.#audio_context.destination);
+        source.start();
+    }
+
+    constructor()
+    {
+        this.#audio_context = new (window.AudioContext || window.webkitAudioContext)();
+
+        this.loadAudio();
+    }
     //Switches to the specified track, unless it's already playing it
     switchTrackNoRepeat(track_path)
     {
@@ -316,8 +429,6 @@ class BoardStateManager
     //-1 if nobody won
     checkWinCondition(row_index,col_index,player_enum)
     {
-        console.log("Row:" + row_index);
-        console.log("Column:" + col_index);
         let row_iterator,col_iterator,consecutive_counter_count,winning_counters;
 
         //////////////////////// VERTICAL CHECK /////////////////////////////////////////
@@ -509,6 +620,7 @@ class Game
     mute_button_element = null;
     winner_bar_element = null;
     darken_overlay_element = null;
+    progress_bar_element = null;
 
     constructor()
     {
@@ -534,6 +646,7 @@ class Game
             this.winner_bar_element = document.querySelector(constants.game_selector.WINNER_BAR);
             this.darken_overlay_element = document.querySelector(constants.game_selector.DARKEN_OVERLAY);
             this.winner_card_text_element = document.querySelector(constants.game_selector.WINNER_TEXT_LABEL);
+            this.progress_bar_element = document.querySelector(constants.game_selector.PROGRESS_BAR);
         }
         else
         {
@@ -554,6 +667,7 @@ class Game
                     this.winner_bar_element = document.querySelector(constants.game_selector.WINNER_BAR);
                     this.darken_overlay_element = document.querySelector(constants.game_selector.DARKEN_OVERLAY);
                     this.winner_card_text_element = document.querySelector(constants.game_selector.WINNER_TEXT_LABEL);
+                    this.progress_bar_element = document.querySelector(constants.game_selector.PROGRESS_BAR);
                 }.bind(this));
         }
         Game.s_instance = this;
@@ -651,7 +765,6 @@ class Game
                     const grid_area_property_string = getComputedStyle(counter).gridArea;
                     const regex = /\s*(\d+)\s*\/\s*(\d+)/;
                     const match = grid_area_property_string.match(regex);
-                    console.log("Grid area string:" + grid_area_property_string)
 
                     const counter_row_index = match[1] - 1;
                     const counter_col_index = match[2] - 1;
@@ -788,10 +901,12 @@ class Game
                 this.checkAndHandleWinCondition(row_index,col_index,player_enum);
             }.bind(this));
 
+
         //Trigger sound efect after delay
         setTimeout(()=>{
-            const audio = new Audio(constants.assets.SOUND_BOUNCE_PATH);  // Create a new audio object
-            audio.play();  // Play the new audio object
+            //const audio = new Audio(constants.assets.SOUND_BOUNCE_PATH);  // Create a new audio object
+            // Create an audio buffer source node
+            Game.the().music_manager.play(constants.assets.SOUND_BOUNCE_PATH);
         },constants.game_constraints.BOUNCE_DELAY_MS);
 
     }
@@ -922,87 +1037,6 @@ class Game
     }
 }
 
-
-var image_assets = ["assets/connect_four/images/cpu.svg",
-                    "assets/connect_four/images/counter-red-small.svg",
-                    "assets/connect_four/images/counter-yellow-small.svg",
-                    "assets/connect_four/images/counter-red-large.svg",
-                    "assets/connect_four/images/counter-yellow-large.svg",
-                    "assets/connect_four/images/board-layer-black-small.svg",
-                    "assets/connect_four/images/board-layer-white-small.svg",
-                    "assets/connect_four/images/board-layer-black-large.svg",
-                    "assets/connect_four/images/board-layer-white-large.svg",
-                    "assets/connect_four/images/volume-on.svg",
-                    "assets/connect_four/images/volume-off.svg",
-                    "assets/connect_four/images/volume-low.svg",
-                    "assets/connect_four/images/marker-red.svg",
-                    "assets/connect_four/images/marker-yellow.svg",
-                    "assets/connect_four/images/turn-background-red.svg",
-                    "assets/connect_four/images/turn-background-yellow.svg",
-                    "assets/connect_four/images/icon-check.svg",
-                    "assets/connect_four/images/icon-check-purple.svg",
-                    "assets/connect_four/images/icon-check-purple.svg",
-                    "assets/connect_four/images/player-vs-player.svg",
-]
-var audio_assets = [ "assets/connect_four/audio/drop_bounce.mp3",
-                     "assets/connect_four/audio/bubble_sound.mp3",
-                     "assets/connect_four/audio/click_cool.wav",
-                     "assets/connect_four/audio/main_menu.mp3",
-                     "assets/connect_four/audio/game.mp3",
-]
-//TODO: fill in the image_assets and audio_assets, then make a little loading screen.
-// The game should start in the loding stage, then this loadAllAssets function should
-// be the one to switch from the loading scene to the main menu.
-// Could pretty easily make a progress bar of some kind as well.
-
-function loadAllAssets()
-{
-    const progress_bar = document.querySelector(constants.game_selector.PROGRESS_BAR);
-    let asset_loaded_count = 0;
-    const total_asset_count = audio_assets.length + image_assets.length;
-    console.log(total_asset_count);
-
-    const asset_array = []; // So they don't get garbage collected
-    function onAssetLoad(){
-        asset_loaded_count++;
-        console.log(`Loaded: something; total nr loaded assets: ${asset_loaded_count}`);
-        //Update the progress_bar
-        let progress_percent = Math.floor((asset_loaded_count / total_asset_count) * 100);
-        progress_bar.style.width= `${progress_percent}%`
-        console.log("progress perc:" + progress_percent);
-        console.log("just the division" + (asset_loaded_count/total_asset_count));
-
-        if(asset_loaded_count == total_asset_count)
-        {
-            Game.the().switchScene(constants.scene_selector.MAIN_MENU);
-        }
-    } 
-    image_assets.forEach(function(path)
-        {
-            const image = new Image();
-            asset_array.push(image);
-            image.onload = onAssetLoad;
-            image.onerror = function(error){
-                console.log(error);
-            }
-            image.src = path;
-        });
-    audio_assets.forEach(function(path)
-        {
-            const track = new Audio();
-            asset_array.push(track);
-            track.addEventListener("canplaythrough",onAssetLoad);
-            track.onerror = function(error){
-                console.log(error);
-            }
-            track.src = path;
-            track.load();
-        });
-}
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() 
     {
 
@@ -1113,14 +1147,12 @@ document.addEventListener('DOMContentLoaded', function()
         buttons.forEach(function(button) {
             button.addEventListener('mouseenter', function()
                 {
-                    const audio = new Audio(constants.assets.SOUND_MENU_HOVER);  // Create a new audio object
-                    audio.play();  // Play the new audio object
+                    Game.the().music_manager.play(constants.assets.SOUND_MENU_HOVER);
                 });
 
             button.addEventListener('click', function()
                 {
-                    const audio = new Audio(constants.assets.SOUND_CLICK);  // Create a new audio object
-                    audio.play();  // Play the new audio object
+                    Game.the().music_manager.play(constants.assets.SOUND_CLICK);
                 });
         });
     });
@@ -1145,8 +1177,3 @@ function getCounterContainerColumnIndexFromXOffset(xOffset)
     const column_index = parseInt(Math.max(xOffset - padding_left,0) / (column_size + column_gap) + 1);
     return column_index - 1;
 }
-
-
-
-
-
