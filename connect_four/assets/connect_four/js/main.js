@@ -244,6 +244,11 @@ class MusicManager
         });
     };
 
+    isMuted()
+    {
+        return this.#is_muted;
+    }
+
     play(audio_path)
     {
         const source = this.#audio_context.createBufferSource();
@@ -286,10 +291,15 @@ class MusicManager
         this.#current_track.play();
         this.#current_track.loop = true;
     }
-    mute()
+    muteCurrentTrack()
     {
         this.#current_track.pause();
         this.#is_muted = true;
+    }
+    playCurrentTrack()
+    {
+        this.#current_track.play();
+        this.#is_muted = false;
     }
 
     //Mutes if not muted, unmute if muted
@@ -304,7 +314,7 @@ class MusicManager
         }
         else
         {
-            this.mute();
+            this.muteCurrentTrack();
             return false;
         }
     }
@@ -727,24 +737,9 @@ class Game
 
     toggleMute()
     {
-        const is_playing = this.music_manager.toggleMute();
+        this.music_manager.toggleMute();
 
-        if(is_playing)
-        {
-            this.mute_button_elements.forEach((mute_button_element)=>
-                {
-                    mute_button_element.classList.add(constants.volume_button_class.UNMUTED);
-                    mute_button_element.classList.remove(constants.volume_button_class.MUTED);
-                });
-        }
-        else
-        {
-            this.mute_button_elements.forEach((mute_button_element)=>
-                {
-                    mute_button_element.classList.add(constants.volume_button_class.MUTED);
-                    mute_button_element.classList.remove(constants.volume_button_class.UNMUTED);
-                });
-        }
+        this.updateVolumeButtonLook();
     }
 
     //Make it accept this PlayerWin and make it do everything.
@@ -1013,6 +1008,25 @@ class Game
         }
     }
 
+    updateVolumeButtonLook()
+    {
+        if(!this.music_manager.isMuted())
+        {
+            this.mute_button_elements.forEach((mute_button_element)=>
+                {
+                    mute_button_element.classList.add(constants.volume_button_class.UNMUTED);
+                    mute_button_element.classList.remove(constants.volume_button_class.MUTED);
+                });
+        }
+        else
+        {
+            this.mute_button_elements.forEach((mute_button_element)=>
+                {
+                    mute_button_element.classList.add(constants.volume_button_class.MUTED);
+                    mute_button_element.classList.remove(constants.volume_button_class.UNMUTED);
+                });
+        }
+    }
 
     updateWinnerBarLook(playerEnum)
     {
@@ -1194,3 +1208,14 @@ function getCounterContainerColumnIndexFromXOffset(xOffset)
     const column_index = parseInt(Math.max(xOffset - padding_left,0) / (column_size + column_gap) + 1);
     return column_index - 1;
 }
+
+document.addEventListener("visibilitychange", (event) => {
+  if (document.visibilityState == "visible") {
+      //TODO: Ideally put this in a Game function, instead of having this functionality in the handler.
+      Game.the().music_manager.playCurrentTrack();
+      Game.the().updateVolumeButtonLook();
+  } else {
+      Game.the().music_manager.muteCurrentTrack();
+      Game.the().updateVolumeButtonLook();
+  }
+});
