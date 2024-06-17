@@ -1104,12 +1104,14 @@ document.addEventListener('DOMContentLoaded', function()
                 event.stopPropagation();
             });
 
-        const mute_button = document.querySelector(constants.game_selector.MUTE_BUTTON);
-        mute_button.addEventListener('click',function()
-            {
-                console.log("Mute button clicked");
-                Game.the().toggleMute();
-            });
+        const mute_buttons = document.querySelectorAll(constants.game_selector.MUTE_BUTTON);
+        mute_buttons.forEach((mute_button)=>{
+            mute_button.addEventListener('click',function()
+                {
+                    console.log("Mute button clicked");
+                    Game.the().toggleMute();
+                });
+        });
 
 
         //TODO Maybe add this mousemove event to the counter container instead of the whole document?
