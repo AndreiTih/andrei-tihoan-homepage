@@ -19,8 +19,11 @@
     background-image:url("assets/connect_four/images/volume-off.svg");
 }
 
-.volume-button:hover
+@media(hover:hover)
 {
-    background-image:url("assets/connect_four/images/volume-low.svg");
-    cursor:pointer;
+    .volume-button:hover
+    {
+        background-image:url("assets/connect_four/images/volume-low.svg");
+        cursor:pointer;
+    }
 }

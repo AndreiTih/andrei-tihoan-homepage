@@ -153,6 +153,11 @@
         width:335px;
     }
 
+    .in-game-escape-menu::before
+    {
+        top:50px;
+        left:45%;
+    }
     .in-game-escape-menu
     {
         padding: 131px 20px 30px 20px;
@@ -166,7 +171,7 @@
 
         .volume-button
         {
-            top:25px;
+            top:65px;
             right:25px;
         }
     }

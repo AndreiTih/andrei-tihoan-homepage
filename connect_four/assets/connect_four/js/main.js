@@ -617,7 +617,7 @@ class Game
     score_player_2_element = null;
     bounce_audio_element = null;
     escape_menu_element = null;
-    mute_button_element = null;
+    mute_button_elements = null;
     winner_bar_element = null;
     darken_overlay_element = null;
     progress_bar_element = null;
@@ -642,11 +642,11 @@ class Game
             this.score_player_1_element = document.querySelector(constants.game_selector.SCORE_PLAYER_1);
             this.score_player_2_element = document.querySelector(constants.game_selector.SCORE_PLAYER_2);
             this.escape_menu_element = document.querySelector(constants.game_selector.ESCAPE_MENU);
-            this.mute_button_element = document.querySelector(constants.game_selector.MUTE_BUTTON);
             this.winner_bar_element = document.querySelector(constants.game_selector.WINNER_BAR);
             this.darken_overlay_element = document.querySelector(constants.game_selector.DARKEN_OVERLAY);
             this.winner_card_text_element = document.querySelector(constants.game_selector.WINNER_TEXT_LABEL);
             this.progress_bar_element = document.querySelector(constants.game_selector.PROGRESS_BAR);
+            this.mute_button_elements = document.querySelectorAll(constants.game_selector.MUTE_BUTTON);
         }
         else
         {
@@ -663,11 +663,11 @@ class Game
                     this.score_player_1_element = document.querySelector(constants.game_selector.SCORE_PLAYER_1);
                     this.score_player_2_element = document.querySelector(constants.game_selector.SCORE_PLAYER_2);
                     this.escape_menu_element = document.querySelector(constants.game_selector.ESCAPE_MENU);
-                    this.mute_button_element = document.querySelector(constants.game_selector.MUTE_BUTTON);
                     this.winner_bar_element = document.querySelector(constants.game_selector.WINNER_BAR);
                     this.darken_overlay_element = document.querySelector(constants.game_selector.DARKEN_OVERLAY);
                     this.winner_card_text_element = document.querySelector(constants.game_selector.WINNER_TEXT_LABEL);
                     this.progress_bar_element = document.querySelector(constants.game_selector.PROGRESS_BAR);
+                    this.mute_button_elements = document.querySelectorAll(constants.game_selector.MUTE_BUTTON);
                 }.bind(this));
         }
         Game.s_instance = this;
@@ -731,13 +731,19 @@ class Game
 
         if(is_playing)
         {
-            this.mute_button_element.classList.add(constants.volume_button_class.UNMUTED);
-            this.mute_button_element.classList.remove(constants.volume_button_class.MUTED);
+            this.mute_button_elements.forEach((mute_button_element)=>
+                {
+                    mute_button_element.classList.add(constants.volume_button_class.UNMUTED);
+                    mute_button_element.classList.remove(constants.volume_button_class.MUTED);
+                });
         }
         else
         {
-            this.mute_button_element.classList.add(constants.volume_button_class.MUTED);
-            this.mute_button_element.classList.remove(constants.volume_button_class.UNMUTED);
+            this.mute_button_elements.forEach((mute_button_element)=>
+                {
+                    mute_button_element.classList.add(constants.volume_button_class.MUTED);
+                    mute_button_element.classList.remove(constants.volume_button_class.UNMUTED);
+                });
         }
     }
 
@@ -1088,6 +1094,15 @@ document.addEventListener('DOMContentLoaded', function()
                 event.stopPropagation();
             });
 
+        const escape_menu_restart = document.querySelector(constants.game_selector.ESCAPE_MENU_RESTART);
+        escape_menu_restart.addEventListener('click',function(event)
+            {
+                Game.the().initializeGame();
+                Game.the().music_manager.switchTrack(constants.assets.MUSIC_GAME);
+                Game.the().resumeGame();
+                event.stopPropagation();
+            });
+
         const game_restart_button = document.querySelector(constants.game_selector.RESTART_BUTTON);
         game_restart_button.addEventListener('click',function(event)
             {
@@ -1124,7 +1139,6 @@ document.addEventListener('DOMContentLoaded', function()
                 const col_index = getCounterContainerColumnIndexFromXOffset(xOffset)
                 // Here we can add the aesthetic change (change the position of the marker to be above the index)
                 Game.the().updateMarkerPosition(col_index);
-
             }          
         });
 
