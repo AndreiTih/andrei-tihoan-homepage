@@ -1,17 +1,11 @@
-# Yevgeniy Brikman Home Page
+# Andrei Tihoan Home Page
 
-This is the code for the [Yevgeniy Brikman Home Page](https://www.ybrikman.com).
+This is the code for the [Andrei Tihoan Home Page](https://www.andreitihoan.com).
 
 ![Yevgeniy Brikman Home Page Screenshot](/assets/img/screenshots/ybrikman-homepage-screenshot.png)
 
 I wanted a clean, simple home page where I could put my writing, speaking,
-projects, and photos. It had to be fast, mobile-friendly, free to build, and
-easy to update. This is the result. Forks and pull requests are welcome!
-
-Check out [Migrating from Blogger to GitHub Pages and launching the new ybrikman.com](https://www.ybrikman.com/writing/2015/04/20/migrating-from-blogger-to-github-pages/)
-for background info.
-
-
+projects, and photos. Full transparency: This is a fork of Yevgeniy Brikman's home page.
 
 
 ## Quick start
@@ -26,8 +20,6 @@ See the [Jekyll](http://jekyllrb.com/) and [GitHub Pages](https://pages.github.c
 documentation for more info.
 
 
-
-
 ## Docker quick start
 
 As an alternative to installing Ruby and Jekyll, if you're a user of
@@ -37,8 +29,6 @@ yevgeniy-brikman-homepage that has all the dependencies already setup for you.
 1. `git clone` this repo
 2. `docker-compose up`
 3. Go to `http://localhost:4000` to test
-
-
 
 
 ## Technologies
