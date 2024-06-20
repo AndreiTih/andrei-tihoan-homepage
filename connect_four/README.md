@@ -18,4 +18,5 @@ To serve the code exactly as I do, move back a directory in this repo to andrei-
 
 The game plays entirely on the browser however, so one could just copy all the assets and serve index.html on an arbitrary route defined by a server framework of your choice.
 
-// Add here some kind of video or something showing the game, not that it's super necessary but it fills out the page
+
+![Connect 4 game](/connect_four/assets/connect_four/connect_four.mp4)
