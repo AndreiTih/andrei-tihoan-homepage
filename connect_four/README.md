@@ -18,5 +18,5 @@ To serve the code exactly as I do, move back a directory in this repo to andrei-
 
 The game plays entirely on the browser however, so one could just copy all the assets and serve index.html on an arbitrary route defined by a server framework of your choice.
 
-
-![Connect 4 game](/connect_four/assets/connect_four/connect_four.mp4)
+<video autoplay="" src="/connect_four/assets/readme_connect_four.mp4">
+</video>
