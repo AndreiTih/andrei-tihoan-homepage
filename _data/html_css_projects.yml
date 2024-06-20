@@ -221,10 +221,12 @@
     Implementation of the interactive comment section design from frontendmentors.
   html_body: |
     <div id="interactive-comment-section">
+
+    <div class="project-link-container bobbing-marker">
+      <a class="link-to-project link-to-comment-section" href="http://91.108.112.220/"> Full-stack solution </a>
+      <p>I implemented a Full-stack solution for this project</p>
+    </div>
       <div class="main-content">
-          <div class="link-fullstack">
-              I implemeneted a <a href="http://91.108.112.220:80">fullstack solution</a> for this project.
-          </div>
 
           <section class="comments-container">
               <div class="comment comment-other">
@@ -363,6 +365,12 @@
     Implementation of the connect four design from frontend mentors.
   html_body: |
     <div id="connect_four">
+
+      <div class="project-link-container project-link-container-connect-four">
+        <a class="link-to-project link-to-connect-four" href="https://www.andreitihoan.com/connect_four"> PLAY GAME </a>
+        <p> Play the game on my website. </p>
+      </div>
+
         <div class="scene-board">
             <div class="centered-container">
                 <div class="game-container">

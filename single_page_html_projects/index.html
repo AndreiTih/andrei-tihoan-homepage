@@ -6,10 +6,17 @@ include_header: html_css_header.html
 nav_item: home
 ---
 
+<!--
+Maybe we need to make an include, and in that include pattern place our
+button. That sounds reasonable.
+-->
 <head>
+    <link rel="stylesheet" href="style.css">
+
     {% for project in site.data.html_css_projects %}
         {{project.html_head}}
     {% endfor %}
+    
 </head>
 
 

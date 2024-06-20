@@ -1109,6 +1109,7 @@ document.addEventListener('DOMContentLoaded', function()
                 event.stopPropagation();
             });
 
+        /*
         const escape_menu_restart = document.querySelector(constants.game_selector.ESCAPE_MENU_RESTART);
         escape_menu_restart.addEventListener('click',function(event)
             {
@@ -1117,6 +1118,7 @@ document.addEventListener('DOMContentLoaded', function()
                 Game.the().resumeGame();
                 event.stopPropagation();
             });
+        */
 
         const game_restart_button = document.querySelector(constants.game_selector.RESTART_BUTTON);
         game_restart_button.addEventListener('click',function(event)

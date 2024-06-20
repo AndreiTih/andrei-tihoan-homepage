@@ -8,7 +8,7 @@
     gap:30px;
 
     box-sizing:border-box;
-    padding: 160px 40px 60px 40px;
+    padding: 200px 40px 60px 40px;
     
 
     width:480px;
@@ -139,9 +139,35 @@
     background-color:$light-pink;
 }
 
+.menu-button-github
+{
+    position:relative;
+    background-color:$github-dark;
+    color:$github-light;
+}
+.menu-button-github::before
+{
+    position:absolute;
+    width:46px;
+    height:46px;
+    content:"";
+    right:17px;
+
+    // Bit of a hack. The github svg doesn't have a defined path 
+    // to the inner part of the image making it transparent.
+    // Changing the background color effectively changes its color but
+    // the image isn't perfectly flush with the BOX so there's a little
+    // white border around it. Setting an inset box shadow to hide it.
+    box-shadow: inset 0px 0px 0px 4px black;
+    background-color:white;
+
+    background-image:url("assets/connect_four/images/github.svg");
+    background-repeat:no-repeat;
+    border-radius:100px;
+}
 
 
-@media (max-width:$breakpoint-xsm)
+@media (max-width:$breakpoint-board)
 {
 
     .main-menu-container

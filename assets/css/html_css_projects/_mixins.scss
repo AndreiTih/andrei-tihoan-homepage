@@ -1,0 +1,15 @@
+
+
+$comment-section-dark-blue: #5158B0;
+$light-gray: hsl(223, 19%, 93%);
+
+$dark-purple: hsl(257, 67%, 51%);
+$light-orange: hsl(41, 100%, 70%);
+
+
+@mixin space-grotesk($weight) {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+}

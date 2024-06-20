@@ -1,0 +1,76 @@
+.project-link-container
+{
+    position:relative;
+    width:fit-content;
+
+    display:flex;
+    margin-left:auto !important;
+    margin-right:auto !important;
+
+
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:10px;
+    
+    p
+    {
+        font-size:14px !important;
+    }
+}
+
+
+.link-to-project
+{
+    min-width:50px;
+    min-height:40px;
+
+    box-sizing:border-box;
+    padding: 8px 10px 8px 10px !important;
+    border-radius: 10px;
+}
+
+.link-to-project:hover
+{
+    cursor:pointer;
+}
+
+.link-to-comment-section
+{
+    background-color:white;
+    color:$comment-section-dark-blue;
+}
+
+.link-to-comment-section:hover
+{
+    background-color:$light-gray;
+    color:$comment-section-dark-blue;
+}
+
+
+.project-link-container-connect-four
+{
+    position:relative;
+    top:-3rem;
+    p
+    {
+        color:white;
+    }
+}
+
+.link-to-connect-four
+{
+    //LEFT HERE. Change background color appropriately all that.
+    background-color:$dark-purple;
+    color:white;
+    @include space-grotesk(400);
+}
+
+.link-to-connect-four:hover
+{
+    color:black;
+    background-color:$light-orange;
+}
+
+

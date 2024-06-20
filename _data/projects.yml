@@ -26,9 +26,8 @@
   - name: "Connect Four Game"
     date: "2023"
     description: |
-      A slightly more complex browser-side project.
-      I made this to practice more intricate browser-side JavaScript.
-      The design was sourced from <a href="https://www.frontendmentor.io">frontendmentors.io</a>.
+      A responsive, JavaScript-heavy web game I made to develop my understanding of browser-side JavaScript.
+      Ensured full functionality and an optimal user experience on both desktop and mobile devices.
     url: "https://www.andreitihoan.com/connect_four"
     url_source: "https://github.com/AndreiTih/andrei-tihoan-homepage/tree/gh-pages/connect_four"
     video: "connect_4_large.mp4"
@@ -51,7 +50,7 @@
       Hosted on a VPS from <a href=https://www.hostinger.co.uk>hostinger.co.uk</a>.
       <br>
 
-      Deployed using <a href="https://pm2.keymetrics.io/">pm2</a>
+      Deployed using <a href="https://pm2.keymetrics.io/">pm2</a>.
     url: "http://91.108.112.220:80"
     url_source: "https://github.com/AndreiTih/interactive_comment_section"
     image: "comment_section_thumbnail.JPG"
@@ -119,7 +118,7 @@
   - name: "Agent Jump"
     date: "2023"
     description: |
-      A game written in C++ that is a clone of the well known <a href = https://play.google.com/store/apps/details?id=com.lima.doodlejump&hl=en&gl=US>doodle jump</a> mobile game.
+      A game written in C++ that is a clone of the well-known <a href = https://play.google.com/store/apps/details?id=com.lima.doodlejump&hl=en&gl=US>Doodle Jump</a> mobile game.
       <br>
       Written using Sumo Digital Academy's playbuffer 
       framework. A good exercise in memory management and

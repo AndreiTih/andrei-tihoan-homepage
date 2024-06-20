@@ -1,0 +1,24 @@
+
+.bobbing-marker::before
+{
+    position:absolute;
+    content:"";
+    top:-60px;
+
+    width:38px;
+    height:36px;
+    background-image:url("assets/images/marker-blue.svg");
+
+    animation-name: bobbing;
+    animation-duration: 4s;
+    animation-iteration-count:infinite;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes bobbing 
+{
+  0%   {transform:translate(0, 0px);}
+  50%   {transform:translate(0, 10px);}
+  100%   {transform:translate(0, 0px);}
+}

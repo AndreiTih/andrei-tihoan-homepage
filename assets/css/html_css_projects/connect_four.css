@@ -6,6 +6,7 @@
   /*Mixins*/
   /* Common breakpoints */
   /*For z-indexing*/
+  background-color: hsl(257, 100%, 64%);
 }
 #connect_four * {
   margin: 0px;
