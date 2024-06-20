@@ -12,7 +12,7 @@ An implementation of a Connect 4 game design provided by [frontendmentor](https:
 
 # Running the code
 
-To serve the code exactly as I do, move back a directory in this repo to andrei-tihoan-homepage (TODO: learn how to do a repo relative link) and follow the instructions laid out there.
+To serve the code in the same manner as this repo, move back a directory to [andrei-tihoan-homepage](https://github.com/AndreiTih/andrei-tihoan-homepage) and follow the instructions in the README.md.
 
 <br>
 
