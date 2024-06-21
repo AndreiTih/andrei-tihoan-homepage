@@ -47,7 +47,7 @@
     margin: auto;
     text-align: center;
     color: #a3a5ae; }
-  @media (max-width: 376px) {
+  @media (max-width: 1142px) {
     #four-card-feature-section header {
       min-width: 375px; }
     #four-card-feature-section header > .header-hook {
@@ -69,12 +69,12 @@
     display: flex;
     width: 100%;
     gap: 35px; }
-  @media (min-width: 376px) {
+  @media (min-width: 1142px) {
     #four-card-feature-section .features-container {
       height: 535px;
       margin-left: 20px;
       margin-right: 20px; } }
-  @media (max-width: 376px) {
+  @media (max-width: 1142px) {
     #four-card-feature-section .features-container {
       flex-direction: column; } }
   #four-card-feature-section .features-column-container {

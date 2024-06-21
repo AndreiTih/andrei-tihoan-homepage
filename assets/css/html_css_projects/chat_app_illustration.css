@@ -2,6 +2,18 @@
   /* Family: [Rubik](https://fonts.google.com/specimen/Rubik) */
   min-height: 60vh;
   margin-top: 15vh; }
+
+  textarea{
+      //Adding these because of conflicts with main.css
+      padding: 0;
+      box-sizing:initial !important;
+      font-size:initial;
+      font-family:initial;
+      font-size:initial;
+  }
+  button{
+      padding:0;
+  }
   #chat_app_illustration * {
     margin: 0px;
     border: 0px;
@@ -243,6 +255,7 @@
     content: "";
     background-color: white; }
   #chat_app_illustration .form-comment {
+    position:relative;
     display: flex;
     align-items: center;
     height: 35px;
@@ -253,8 +266,10 @@
     margin-bottom: 10px;
     border-radius: 50px; }
     #chat_app_illustration .form-comment .text-input {
-      width: 70%;
       position: relative;
+      width: 70%;
+      height:100%;
+      padding:0px;
       resize: none;
       border-radius: 50px; }
     #chat_app_illustration .form-comment .text-input::placeholder {
@@ -267,6 +282,20 @@
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal; }
+      /*
+    #chat_app_illustration .form-comment .text-input::-moz-placeholder { 
+      position: absolute;
+      top: 12px;
+      left: 20px;
+      font-size: 0.75em;
+      opacity: 50%;
+      font-family: "Rubik", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal; 
+  }
+  */
+      
     #chat_app_illustration .form-comment .send-button {
       position: relative;
       width: 25px;

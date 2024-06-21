@@ -70,7 +70,7 @@
     padding-left: 10vw;
     padding-right: 10vw;
     padding-top: 20vh; }
-  @media (max-width: 375px) {
+  @media (max-width: 700px) {
     #results-summary-component .main-content {
       padding-left: 0px;
       padding-right: 0px; } }
@@ -132,7 +132,7 @@
     height: 20%;
     width: fit-content;
     color: #c8c7ff; }
-  @media (max-width: 375px) {
+  @media (max-width: 700px) {
     #results-summary-component .result {
       height: 355px;
       width: 375px;
@@ -190,7 +190,7 @@
      And the item size changes. Maybe look into css variables and see if we can somehow leverage those.*/
     background-color: #303b5a;
     color: white; }
-  @media (max-width: 375px) {
+  @media (max-width: 700px) {
     #results-summary-component .summary {
       background-color: white;
       height: 445px;
@@ -285,7 +285,7 @@ And the item size changes. Maybe look into css variables and see if we can someh
     width: fit-content;
     margin-right: auto;
     margin-left: auto; }
-  @media (min-width: 375px) {
+  @media (min-width: 700px) {
     #results-summary-component .result-summary {
       flex-direction: row;
       box-shadow: 15px 15px 30px #ebf1ff; } }

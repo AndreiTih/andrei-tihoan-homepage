@@ -20,6 +20,19 @@
     }
 }
 
+//Subclasses:
+
+.project-link-container-connect-four
+{
+    position:relative;
+    top:-3rem;
+    p
+    {
+        color:white;
+    }
+}
+
+//link to project
 
 .link-to-project
 {
@@ -36,6 +49,8 @@
     cursor:pointer;
 }
 
+//Subclasses:
+
 .link-to-comment-section
 {
     background-color:white;
@@ -48,16 +63,6 @@
     color:$comment-section-dark-blue;
 }
 
-
-.project-link-container-connect-four
-{
-    position:relative;
-    top:-3rem;
-    p
-    {
-        color:white;
-    }
-}
 
 .link-to-connect-four
 {
@@ -72,5 +77,4 @@
     color:black;
     background-color:$light-orange;
 }
-
 
