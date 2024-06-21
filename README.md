@@ -2,7 +2,7 @@
 
 This is the code for the [Andrei Tihoan Home Page](https://www.andreitihoan.com).
 
-![Yevgeniy Brikman Home Page Screenshot](/assets/img/screenshots/ybrikman-homepage-screenshot.png)
+![Andrei Tihoan homepage screenshot](https://github.com/AndreiTih/andrei-tihoan-homepage/assets/91728090/61aff329-eeb0-4041-b19b-020d3b1df01a)
 
 I wanted a clean, simple home page where I could put my writing, speaking,
 projects, and photos. Full transparency: This is a fork of Yevgeniy Brikman's home page.
